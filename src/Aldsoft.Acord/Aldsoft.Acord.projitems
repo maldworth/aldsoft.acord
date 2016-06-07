@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>3e2c2daf-8e9a-4ed3-9e87-3eba95d597c8</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Aldsoft.Acord</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)BuilderBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntityBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StringWriterEncoding.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,71 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.xml" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+<#@ output extension=".cs" #>
+<#
+	string root = Host.ResolvePath(string.Empty);
+	string xmlFilename = "ValidRelationTypes.xml";
+	string filePath = Path.Combine(root, xmlFilename);
+
+	XmlDocument doc = new XmlDocument();
+	doc.Load(filePath);
+#>
+namespace Aldsoft.Acord.LA
+{
+	using System.Collections.Generic;
+
+	public class Relation
+    {
+        public string OriginatingObjectType { get; set; }
+        public string RelatedObjectType { get; set; }
+        public string RelationTypeCode { get; set; }
+        public string ReciprocalRelationTypeCode { get; set; }
+
+		public static Dictionary<string, Relation[]> AllowedRelationships = new Dictionary<string, Relation[]>
+        {
+<#
+			foreach(XmlNode node in doc.SelectNodes("/ValidRelationTypes/RelationType"))
+			{
+			var codenameNode = node.SelectSingleNode("./codename");
+			var relations = node.SelectNodes("./Relations/Relation");
+			//var sublistNode = node.SelectSingleNode("./sublist");
+#>
+			{ OLI_LU_REL.<#= codenameNode.InnerText #>.tc, new[]{ <#= ConstructRelations(codenameNode,relations) #> } },
+<#
+			}
+#>
+		};
+	} // End Relation
+} // End Namespace
+
+<#+   // Start of class feature block
+private string ConstructRelations(XmlNode codenameNode, XmlNodeList relations)
+{
+	StringBuilder sb = new StringBuilder();
+
+	foreach(XmlNode relation in relations)
+	{
+		sb.Append("new Relation{ ");
+		sb.AppendFormat("RelationTypeCode = OLI_LU_REL.{0}.tc, {1}{2}{3}", codenameNode.InnerText, ConstructPropertyIfExists("OriginatingObjectType = OLI_LU_OBJECTTYPE.{0}.tc, ", relation.SelectSingleNode("./sublist").Attributes["originatingObjectType"]), ConstructPropertyIfExists("RelatedObjectType = OLI_LU_OBJECTTYPE.{0}.tc, ",relation.SelectSingleNode("./sublist").Attributes["relatedObjectType"]), ConstructPropertyIfExists("ReciprocalRelationTypeCode = OLI_LU_REL.{0}.tc, ", relation.SelectSingleNode("./reciprocal")));
+		sb.Append(" }, ");
+	}
+	
+	return sb.ToString();
+}
+private string ConstructPropertyIfExists(string formatString, XmlAttribute xmlAttribute)
+{
+	if(xmlAttribute == null || string.IsNullOrWhiteSpace(xmlAttribute.Value))
+		return "";
+	
+	return string.Format(formatString, xmlAttribute.Value);
+}
+private string ConstructPropertyIfExists(string formatString, XmlNode xmlNode)
+{
+	if(xmlNode == null || string.IsNullOrWhiteSpace(xmlNode.InnerText))
+		return "";
+	
+	return string.Format(formatString, xmlNode.InnerText);
+}
+#>

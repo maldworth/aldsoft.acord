@@ -1,0 +1,41 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.xml" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.IO" #>
+<#@ output extension=".cs" #>
+<#
+	string root = Host.ResolvePath(string.Empty);
+	string xmlFilename = "LookupTypesPublic.xml";
+	string filePath = Path.Combine(root, xmlFilename);
+
+	XmlDocument doc = new XmlDocument();
+	doc.Load(filePath);
+#>
+namespace Aldsoft.Acord.LA
+{
+<#
+	foreach(XmlNode node in doc.SelectNodes("/LookupTypes/Lookup"))
+	{
+#>
+	public partial class <#= node.Attributes["name"].Value #>
+	{
+<#
+		foreach(XmlNode typeCode in node.SelectNodes("./Type"))
+		{
+#>
+		/// <summary>
+        /// tc="<#= typeCode.SelectSingleNode("./Code").InnerText #>", description="<#= typeCode.SelectSingleNode("./Desc").InnerText #>"
+        /// </summary>
+		public static <#= node.Attributes["name"].Value #> <#= typeCode.Attributes["name"].Value #>{ get { return new <#= node.Attributes["name"].Value #>(){ tc = "<#= typeCode.SelectSingleNode("./Code").InnerText #>", Value = "<#= typeCode.SelectSingleNode("./Desc").InnerText #>" }; } }
+		/// <summary>
+        /// desc="<#= typeCode.SelectSingleNode("./Desc").InnerText #>"
+        /// </summary>
+		public static <#= node.Attributes["name"].Value #> _<#= typeCode.SelectSingleNode("./Code").InnerText #>{ get { return new <#= node.Attributes["name"].Value #>(){ tc = "<#= typeCode.SelectSingleNode("./Code").InnerText #>", Value = "<#= typeCode.SelectSingleNode("./Desc").InnerText #>" }; } }
+<#
+		}
+#>	
+	}
+<#
+	}
+#>
+}

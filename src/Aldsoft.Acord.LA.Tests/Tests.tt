@@ -1,0 +1,31 @@
+﻿<#@ include file="T4include\SaveOutput.t4include" #>
+<#@ include file="T4include\LifeBuilder.t4include" #>
+<#@ include file="T4include\OLifEBuilder.t4include" #>
+<#@ include file="T4include\PartyBuilder.t4include" #>
+<#@ include file="T4include\TXLifeBuilder.t4include" #>
+<#@ include file="T4include\UserAuthRequestBuilder.t4include" #>
+<#@ import namespace="System.IO" #>
+<#
+	string root = Host.ResolvePath(string.Empty);
+	var dirInfo = new DirectoryInfo(Path.Combine(root, "..\\"));
+
+	foreach(var dir in dirInfo.GetDirectories("Aldsoft.Acord.LA.V*"))
+	{
+		var version = dir.Name.Split('.')[3];
+
+		GenerateLifeBuilder(version);
+		SaveOutput(version + "\\LifeBuilderTests.cs");
+
+		GenerateOLifEBuilder(version);
+		SaveOutput(version + "\\OLifEBuilderTests.cs");
+
+		GeneratePartyBuilder(version);
+		SaveOutput(version + "\\PartyBuilderTests.cs");
+
+		GenerateTXLifeBuilder(version);
+		SaveOutput(version + "\\TXLifeBuilderTests.cs");
+
+		GenerateUserAuthRequestBuilder(version);
+		SaveOutput(version + "\\UserAuthRequestBuilderTests.cs");
+	}
+#>
