@@ -1,12 +1,12 @@
 ﻿<#+
 void GenerateTXLifeBuilder(string version)
 {
-var niceVersion = version.Substring(1).Replace("_",".");
+var namespaceVersion = "V" + version.Replace(".","_");
 #>
-namespace Aldsoft.Acord.LA.Tests.<#= version #>
+namespace Aldsoft.Acord.LA.Tests.<#= namespaceVersion #>
 {
-    extern alias <#= version #>;
-    using <#= version #>::Aldsoft.Acord.LA;
+    extern alias <#= namespaceVersion #>;
+    using <#= namespaceVersion #>::Aldsoft.Acord.LA;
     using NUnit.Framework;
     using System;
 
@@ -14,11 +14,11 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
     class TXLifeBuilderTests
     {
         [Test]
-        public void <#= version #>_Request_Ordering_Test1()
+        public void <#= namespaceVersion #>_Request_Ordering_Test1()
         {
             // Arrange
             var builder = TXLife_Type.CreateBuilder()
-                .Version("<#= niceVersion #>")
+                .Version("<#= version #>")
                 .AddTXLifeRequest(new TXLifeRequest_Type { id = "3" })
                 .AddUserAuthRequest(new UserAuthRequest_Type())
                 .AddTXLifeRequest(new TXLifeRequest_Type { id = "1" })
@@ -50,11 +50,11 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_Response_Ordering_Test1()
+        public void <#= namespaceVersion #>_Response_Ordering_Test1()
         {
             // Arrange
             var builder = TXLife_Type.CreateBuilder()
-                .Version("<#= niceVersion #>")
+                .Version("<#= version #>")
                 .AddTXLifeResponse(new TXLifeResponse_Type { id = "3" })
                 .AddUserAuthResponse(new UserAuthResponse_Type())
                 .AddTXLifeResponse(new TXLifeResponse_Type { id = "1" })
@@ -93,7 +93,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_UserAuthRequest_Builder_Test1()
+        public void <#= namespaceVersion #>_UserAuthRequest_Builder_Test1()
         {
             // Arrange
             var builder = TXLife_Type.CreateBuilder()
@@ -101,7 +101,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
                 .AddUserAuthRequest(UserAuthRequest_Type.CreateBuilder()
                     .UserAuthentication(new UserAuthentication_Type() { id="testauth" })
                     .UserLoginName("john"))
-                .Version("<#= niceVersion #>")
+                .Version("<#= version #>")
                 .AddOLifEExtension(new OLifEExtension_Type() { VendorCode = "a" });
 
             var txLife = builder.Build();

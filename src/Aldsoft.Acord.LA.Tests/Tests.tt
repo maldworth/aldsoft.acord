@@ -9,9 +9,9 @@
 	string root = Host.ResolvePath(string.Empty);
 	var dirInfo = new DirectoryInfo(Path.Combine(root, "..\\"));
 
-	foreach(var dir in dirInfo.GetDirectories("Aldsoft.Acord.LA.V*"))
+	foreach(var dir in dirInfo.GetDirectories("Aldsoft.Acord.LA.2*"))
 	{
-		var version = dir.Name.Split('.')[3];
+		var version = dir.Name.Replace("Aldsoft.Acord.LA.","");
 
 		GenerateLifeBuilder(version);
 		SaveOutput(version + "\\LifeBuilderTests.cs");

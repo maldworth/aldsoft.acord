@@ -212,3 +212,4 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 src/Aldsoft.Acord.LA.Tests/Tests.cs
+nuget.exe

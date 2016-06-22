@@ -1,11 +1,12 @@
 ﻿<#+
 void GeneratePartyBuilder(string version)
 {
+var namespaceVersion = "V" + version.Replace(".","_");
 #>
-namespace Aldsoft.Acord.LA.Tests.<#= version #>
+namespace Aldsoft.Acord.LA.Tests.<#= namespaceVersion #>
 {
-    extern alias <#= version #>;
-    using <#= version #>::Aldsoft.Acord.LA;
+    extern alias <#= namespaceVersion #>;
+    using <#= namespaceVersion #>::Aldsoft.Acord.LA;
     using NUnit.Framework;
     using System;
 
@@ -13,7 +14,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
     class PartyBuilderTests
     {
         [Test]
-        public void <#= version #>_PartyBuilder_NotSet_Test1()
+        public void <#= namespaceVersion #>_PartyBuilder_NotSet_Test1()
         {
             // Arrange
             var builder = Party_Type.CreateBuilder();
@@ -24,7 +25,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_PartyBuilder_NotSet_Test2()
+        public void <#= namespaceVersion #>_PartyBuilder_NotSet_Test2()
         {
             // Arrange
             var builder = Party_Type.CreateBuilder();
@@ -35,7 +36,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_PartyBuilder_CreateBuilder_CannotSetPartyTypeCode()
+        public void <#= namespaceVersion #>_PartyBuilder_CreateBuilder_CannotSetPartyTypeCode()
         {
             // Arrange/Act/Assert
             var ex = Assert.Throws<ArgumentException>(() => Party_Type.CreateBuilder(new Party_Type { PartyTypeCode = OLI_LU_PARTY.OLI_PT_PERSON }));
@@ -43,7 +44,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_PartyBuilder_CreateBuilder_CannotSetItem()
+        public void <#= namespaceVersion #>_PartyBuilder_CreateBuilder_CannotSetItem()
         {
             // Arrange/Act/Assert
             var ex = Assert.Throws<ArgumentException>(() => Party_Type.CreateBuilder(new Party_Type { Item = new Person_Type() }));
@@ -51,7 +52,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_PartyBuilder_Build_CannotSetPartyTypeCode()
+        public void <#= namespaceVersion #>_PartyBuilder_Build_CannotSetPartyTypeCode()
         {
             // Arrange
             var builder = Party_Type.CreateBuilder()
@@ -63,7 +64,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_PartyBuilder_Build_CannotSetItem()
+        public void <#= namespaceVersion #>_PartyBuilder_Build_CannotSetItem()
         {
             // Arrange
             var builder = Party_Type.CreateBuilder()
@@ -75,7 +76,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_PartyBuilder_Unknown()
+        public void <#= namespaceVersion #>_PartyBuilder_Unknown()
         {
             // Arrange
             var entity = Party_Type.CreateBuilder(new Party_Type { id="test" })
@@ -91,7 +92,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_PartyBuilder_Person()
+        public void <#= namespaceVersion #>_PartyBuilder_Person()
         {
             // Arrange
             var entity = Party_Type.CreateBuilder()
@@ -107,7 +108,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_PartyBuilder_Organization()
+        public void <#= namespaceVersion #>_PartyBuilder_Organization()
         {
             // Arrange
             var entity = Party_Type.CreateBuilder()

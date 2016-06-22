@@ -1,18 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "la", "la", "{1AFF4004-3266-4742-A39E-EA5FBA1BE241}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.Tests", "Aldsoft.Acord.Tests\Aldsoft.Acord.Tests.csproj", "{386443B3-F660-45CC-8898-C5A14D7C637D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_34_00", "Aldsoft.Acord.LA.V2_34_00\Aldsoft.Acord.LA.V2_34_00.csproj", "{5CF70991-57ED-4B7E-9734-9D76A90F0E2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.34.00", "Aldsoft.Acord.LA.2.34.00\Aldsoft.Acord.LA.2.34.00.csproj", "{5CF70991-57ED-4B7E-9734-9D76A90F0E2A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_35_00", "Aldsoft.Acord.LA.V2_35_00\Aldsoft.Acord.LA.V2_35_00.csproj", "{142DEF4E-9B82-411F-A5D6-88D3DB2CDE29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.35.00", "Aldsoft.Acord.LA.2.35.00\Aldsoft.Acord.LA.2.35.00.csproj", "{142DEF4E-9B82-411F-A5D6-88D3DB2CDE29}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
@@ -27,84 +27,84 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Aldsoft.Acord", "Aldsoft.Ac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.Tests", "Aldsoft.Acord.LA.Tests\Aldsoft.Acord.LA.Tests.csproj", "{04D753AD-8759-4B6E-9089-E877E11A431C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_33_00", "Aldsoft.Acord.LA.V2_33_00\Aldsoft.Acord.LA.V2_33_00.csproj", "{4551F36B-4404-4A52-9890-EE900FA52433}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.33.00", "Aldsoft.Acord.LA.2.33.00\Aldsoft.Acord.LA.2.33.00.csproj", "{4551F36B-4404-4A52-9890-EE900FA52433}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_32_00", "Aldsoft.Acord.LA.V2_32_00\Aldsoft.Acord.LA.V2_32_00.csproj", "{8D7F856E-277F-47C7-8977-23BC0EA8486E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.32.00", "Aldsoft.Acord.LA.2.32.00\Aldsoft.Acord.LA.2.32.00.csproj", "{8D7F856E-277F-47C7-8977-23BC0EA8486E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_31_00", "Aldsoft.Acord.LA.V2_31_00\Aldsoft.Acord.LA.V2_31_00.csproj", "{0FFC28CE-F851-4E1F-AE46-0AD3675E6D36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.31.00", "Aldsoft.Acord.LA.2.31.00\Aldsoft.Acord.LA.2.31.00.csproj", "{0FFC28CE-F851-4E1F-AE46-0AD3675E6D36}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_30_00", "Aldsoft.Acord.LA.V2_30_00\Aldsoft.Acord.LA.V2_30_00.csproj", "{619D756A-B5E8-41C1-9458-FCE9CF92B5CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.30.00", "Aldsoft.Acord.LA.2.30.00\Aldsoft.Acord.LA.2.30.00.csproj", "{619D756A-B5E8-41C1-9458-FCE9CF92B5CD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_29_00", "Aldsoft.Acord.LA.V2_29_00\Aldsoft.Acord.LA.V2_29_00.csproj", "{6EC638B1-764F-4BC6-9ED7-831C6B971126}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.29.00", "Aldsoft.Acord.LA.2.29.00\Aldsoft.Acord.LA.2.29.00.csproj", "{6EC638B1-764F-4BC6-9ED7-831C6B971126}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_28_00", "Aldsoft.Acord.LA.V2_28_00\Aldsoft.Acord.LA.V2_28_00.csproj", "{77FEF0B7-B8A3-4353-8B19-4706BB4F0388}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.28.00", "Aldsoft.Acord.LA.2.28.00\Aldsoft.Acord.LA.2.28.00.csproj", "{77FEF0B7-B8A3-4353-8B19-4706BB4F0388}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_27_00", "Aldsoft.Acord.LA.V2_27_00\Aldsoft.Acord.LA.V2_27_00.csproj", "{A279977E-3555-4071-B8EE-0C4EC720FA5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.27.00", "Aldsoft.Acord.LA.2.27.00\Aldsoft.Acord.LA.2.27.00.csproj", "{A279977E-3555-4071-B8EE-0C4EC720FA5B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_26_00", "Aldsoft.Acord.LA.V2_26_00\Aldsoft.Acord.LA.V2_26_00.csproj", "{3621DEF5-4866-448F-B3F2-A4063252DCD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.26.00", "Aldsoft.Acord.LA.2.26.00\Aldsoft.Acord.LA.2.26.00.csproj", "{3621DEF5-4866-448F-B3F2-A4063252DCD5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_25_00", "Aldsoft.Acord.LA.V2_25_00\Aldsoft.Acord.LA.V2_25_00.csproj", "{13D0DA8F-EDDF-45F1-9F73-C9EB8C6CD962}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.25.00", "Aldsoft.Acord.LA.2.25.00\Aldsoft.Acord.LA.2.25.00.csproj", "{13D0DA8F-EDDF-45F1-9F73-C9EB8C6CD962}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.V2_24_01", "Aldsoft.Acord.LA.V2_24_01\Aldsoft.Acord.LA.V2_24_01.csproj", "{E32B021E-5F82-40F8-AD9B-60EA3E032150}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aldsoft.Acord.LA.2.24.01", "Aldsoft.Acord.LA.2.24.01\Aldsoft.Acord.LA.2.24.01.csproj", "{E32B021E-5F82-40F8-AD9B-60EA3E032150}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EC57A9FC-938A-45D3-97E0-08D00DE06392} = {EC57A9FC-938A-45D3-97E0-08D00DE06392}
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{77fef0b7-b8a3-4353-8b19-4706bb4f0388}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{77fef0b7-b8a3-4353-8b19-4706bb4f0388}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{8d7f856e-277f-47c7-8977-23bc0ea8486e}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{77fef0b7-b8a3-4353-8b19-4706bb4f0388}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{8d7f856e-277f-47c7-8977-23bc0ea8486e}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{8d7f856e-277f-47c7-8977-23bc0ea8486e}*SharedItemsImports = 4
 		Aldsoft.Acord\Aldsoft.Acord.projitems*{3e2c2daf-8e9a-4ed3-9e87-3eba95d597c8}*SharedItemsImports = 13
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{5cf70991-57ed-4b7e-9734-9d76a90f0e2a}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{5cf70991-57ed-4b7e-9734-9d76a90f0e2a}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{a279977e-3555-4071-b8ee-0c4ec720fa5b}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{5cf70991-57ed-4b7e-9734-9d76a90f0e2a}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{a279977e-3555-4071-b8ee-0c4ec720fa5b}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{6ec638b1-764f-4bc6-9ed7-831c6b971126}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{a279977e-3555-4071-b8ee-0c4ec720fa5b}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{6ec638b1-764f-4bc6-9ed7-831c6b971126}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{3621def5-4866-448f-b3f2-a4063252dcd5}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{6ec638b1-764f-4bc6-9ed7-831c6b971126}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{3621def5-4866-448f-b3f2-a4063252dcd5}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{e32b021e-5f82-40f8-ad9b-60ea3e032150}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{3621def5-4866-448f-b3f2-a4063252dcd5}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{e32b021e-5f82-40f8-ad9b-60ea3e032150}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{4551f36b-4404-4a52-9890-ee900fa52433}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{e32b021e-5f82-40f8-ad9b-60ea3e032150}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{4551f36b-4404-4a52-9890-ee900fa52433}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{0ffc28ce-f851-4e1f-ae46-0ad3675e6d36}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{4551f36b-4404-4a52-9890-ee900fa52433}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{0ffc28ce-f851-4e1f-ae46-0ad3675e6d36}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{142def4e-9b82-411f-a5d6-88d3db2cde29}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{0ffc28ce-f851-4e1f-ae46-0ad3675e6d36}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{142def4e-9b82-411f-a5d6-88d3db2cde29}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{142def4e-9b82-411f-a5d6-88d3db2cde29}*SharedItemsImports = 4
 		Aldsoft.Acord\Aldsoft.Acord.projitems*{386443b3-f660-45cc-8898-c5a14d7c637d}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{619d756a-b5e8-41c1-9458-fce9cf92b5cd}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{619d756a-b5e8-41c1-9458-fce9cf92b5cd}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{13d0da8f-eddf-45f1-9f73-c9eb8c6cd962}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{619d756a-b5e8-41c1-9458-fce9cf92b5cd}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{13d0da8f-eddf-45f1-9f73-c9eb8c6cd962}*SharedItemsImports = 4
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{13d0da8f-eddf-45f1-9f73-c9eb8c6cd962}*SharedItemsImports = 4
 		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{1410e97c-b48b-421e-b9a6-d4b4e84e947e}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

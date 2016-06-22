@@ -44,129 +44,129 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="V2_24_01\LifeBuilderTests.cs" />
-    <Compile Include="V2_24_01\OLifEBuilderTests.cs" />
-    <Compile Include="V2_24_01\PartyBuilderTests.cs" />
-    <Compile Include="V2_24_01\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_24_01\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_25_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_25_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_25_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_25_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_25_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_26_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_26_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_26_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_26_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_26_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_27_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_27_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_27_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_27_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_27_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_28_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_28_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_28_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_28_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_28_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_29_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_29_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_29_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_29_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_29_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_30_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_30_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_30_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_30_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_30_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_31_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_31_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_31_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_31_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_31_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_32_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_32_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_32_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_32_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_32_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_33_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_33_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_33_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_33_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_33_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_34_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_34_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_34_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_34_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_34_00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="V2_35_00\LifeBuilderTests.cs" />
-    <Compile Include="V2_35_00\OLifEBuilderTests.cs" />
-    <Compile Include="V2_35_00\PartyBuilderTests.cs" />
-    <Compile Include="V2_35_00\TXLifeBuilderTests.cs" />
-    <Compile Include="V2_35_00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.24.01\LifeBuilderTests.cs" />
+    <Compile Include="2.24.01\OLifEBuilderTests.cs" />
+    <Compile Include="2.24.01\PartyBuilderTests.cs" />
+    <Compile Include="2.24.01\TXLifeBuilderTests.cs" />
+    <Compile Include="2.24.01\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.25.00\LifeBuilderTests.cs" />
+    <Compile Include="2.25.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.25.00\PartyBuilderTests.cs" />
+    <Compile Include="2.25.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.25.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.26.00\LifeBuilderTests.cs" />
+    <Compile Include="2.26.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.26.00\PartyBuilderTests.cs" />
+    <Compile Include="2.26.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.26.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.27.00\LifeBuilderTests.cs" />
+    <Compile Include="2.27.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.27.00\PartyBuilderTests.cs" />
+    <Compile Include="2.27.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.27.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.28.00\LifeBuilderTests.cs" />
+    <Compile Include="2.28.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.28.00\PartyBuilderTests.cs" />
+    <Compile Include="2.28.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.28.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.29.00\LifeBuilderTests.cs" />
+    <Compile Include="2.29.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.29.00\PartyBuilderTests.cs" />
+    <Compile Include="2.29.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.29.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.30.00\LifeBuilderTests.cs" />
+    <Compile Include="2.30.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.30.00\PartyBuilderTests.cs" />
+    <Compile Include="2.30.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.30.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.31.00\LifeBuilderTests.cs" />
+    <Compile Include="2.31.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.31.00\PartyBuilderTests.cs" />
+    <Compile Include="2.31.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.31.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.32.00\LifeBuilderTests.cs" />
+    <Compile Include="2.32.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.32.00\PartyBuilderTests.cs" />
+    <Compile Include="2.32.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.32.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.33.00\LifeBuilderTests.cs" />
+    <Compile Include="2.33.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.33.00\PartyBuilderTests.cs" />
+    <Compile Include="2.33.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.33.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.34.00\LifeBuilderTests.cs" />
+    <Compile Include="2.34.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.34.00\PartyBuilderTests.cs" />
+    <Compile Include="2.34.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.34.00\UserAuthRequestBuilderTests.cs" />
+    <Compile Include="2.35.00\LifeBuilderTests.cs" />
+    <Compile Include="2.35.00\OLifEBuilderTests.cs" />
+    <Compile Include="2.35.00\PartyBuilderTests.cs" />
+    <Compile Include="2.35.00\TXLifeBuilderTests.cs" />
+    <Compile Include="2.35.00\UserAuthRequestBuilderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_24_01\Aldsoft.Acord.LA.V2_24_01.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.24.01\Aldsoft.Acord.LA.2.24.01.csproj">
       <Project>{e32b021e-5f82-40f8-ad9b-60ea3e032150}</Project>
-      <Name>Aldsoft.Acord.LA.V2_24_01</Name>
+      <Name>Aldsoft.Acord.LA.2.24.01</Name>
       <Aliases>V2_24_01</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_25_00\Aldsoft.Acord.LA.V2_25_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.25.00\Aldsoft.Acord.LA.2.25.00.csproj">
       <Project>{13d0da8f-eddf-45f1-9f73-c9eb8c6cd962}</Project>
-      <Name>Aldsoft.Acord.LA.V2_25_00</Name>
+      <Name>Aldsoft.Acord.LA.2.25.00</Name>
       <Aliases>V2_25_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_26_00\Aldsoft.Acord.LA.V2_26_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.26.00\Aldsoft.Acord.LA.2.26.00.csproj">
       <Project>{3621def5-4866-448f-b3f2-a4063252dcd5}</Project>
-      <Name>Aldsoft.Acord.LA.V2_26_00</Name>
+      <Name>Aldsoft.Acord.LA.2.26.00</Name>
       <Aliases>V2_26_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_27_00\Aldsoft.Acord.LA.V2_27_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.27.00\Aldsoft.Acord.LA.2.27.00.csproj">
       <Project>{a279977e-3555-4071-b8ee-0c4ec720fa5b}</Project>
-      <Name>Aldsoft.Acord.LA.V2_27_00</Name>
+      <Name>Aldsoft.Acord.LA.2.27.00</Name>
       <Aliases>V2_27_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_28_00\Aldsoft.Acord.LA.V2_28_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.28.00\Aldsoft.Acord.LA.2.28.00.csproj">
       <Project>{77fef0b7-b8a3-4353-8b19-4706bb4f0388}</Project>
-      <Name>Aldsoft.Acord.LA.V2_28_00</Name>
+      <Name>Aldsoft.Acord.LA.2.28.00</Name>
       <Aliases>V2_28_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_29_00\Aldsoft.Acord.LA.V2_29_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.29.00\Aldsoft.Acord.LA.2.29.00.csproj">
       <Project>{6ec638b1-764f-4bc6-9ed7-831c6b971126}</Project>
-      <Name>Aldsoft.Acord.LA.V2_29_00</Name>
+      <Name>Aldsoft.Acord.LA.2.29.00</Name>
       <Aliases>V2_29_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_30_00\Aldsoft.Acord.LA.V2_30_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.30.00\Aldsoft.Acord.LA.2.30.00.csproj">
       <Project>{619d756a-b5e8-41c1-9458-fce9cf92b5cd}</Project>
-      <Name>Aldsoft.Acord.LA.V2_30_00</Name>
+      <Name>Aldsoft.Acord.LA.2.30.00</Name>
       <Aliases>V2_30_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_31_00\Aldsoft.Acord.LA.V2_31_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.31.00\Aldsoft.Acord.LA.2.31.00.csproj">
       <Project>{0ffc28ce-f851-4e1f-ae46-0ad3675e6d36}</Project>
-      <Name>Aldsoft.Acord.LA.V2_31_00</Name>
+      <Name>Aldsoft.Acord.LA.2.31.00</Name>
       <Aliases>V2_31_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_32_00\Aldsoft.Acord.LA.V2_32_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.32.00\Aldsoft.Acord.LA.2.32.00.csproj">
       <Project>{8d7f856e-277f-47c7-8977-23bc0ea8486e}</Project>
-      <Name>Aldsoft.Acord.LA.V2_32_00</Name>
+      <Name>Aldsoft.Acord.LA.2.32.00</Name>
       <Aliases>V2_32_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_33_00\Aldsoft.Acord.LA.V2_33_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.33.00\Aldsoft.Acord.LA.2.33.00.csproj">
       <Project>{4551f36b-4404-4a52-9890-ee900fa52433}</Project>
-      <Name>Aldsoft.Acord.LA.V2_33_00</Name>
+      <Name>Aldsoft.Acord.LA.2.33.00</Name>
       <Aliases>V2_33_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_34_00\Aldsoft.Acord.LA.V2_34_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.34.00\Aldsoft.Acord.LA.2.34.00.csproj">
       <Project>{5cf70991-57ed-4b7e-9734-9d76a90f0e2a}</Project>
-      <Name>Aldsoft.Acord.LA.V2_34_00</Name>
+      <Name>Aldsoft.Acord.LA.2.34.00</Name>
       <Aliases>V2_34_00</Aliases>
     </ProjectReference>
-    <ProjectReference Include="..\Aldsoft.Acord.LA.V2_35_00\Aldsoft.Acord.LA.V2_35_00.csproj">
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.35.00\Aldsoft.Acord.LA.2.35.00.csproj">
       <Project>{142def4e-9b82-411f-a5d6-88d3db2cde29}</Project>
-      <Name>Aldsoft.Acord.LA.V2_35_00</Name>
+      <Name>Aldsoft.Acord.LA.2.35.00</Name>
       <Aliases>V2_35_00</Aliases>
     </ProjectReference>
   </ItemGroup>

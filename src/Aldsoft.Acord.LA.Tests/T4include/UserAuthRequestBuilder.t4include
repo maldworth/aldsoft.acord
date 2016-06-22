@@ -1,12 +1,12 @@
 ﻿<#+
 void GenerateUserAuthRequestBuilder(string version)
 {
-var niceVersion = version.Substring(1).Replace("_",".");
+var namespaceVersion = "V" + version.Replace(".","_");
 #>
-namespace Aldsoft.Acord.LA.Tests.<#= version #>
+namespace Aldsoft.Acord.LA.Tests.<#= namespaceVersion #>
 {
-    extern alias <#= version #>;
-    using <#= version #>::Aldsoft.Acord.LA;
+    extern alias <#= namespaceVersion #>;
+    using <#= namespaceVersion #>::Aldsoft.Acord.LA;
     using NUnit.Framework;
     using System;
 
@@ -14,7 +14,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
     class UserAuthRequestBuilderTests
     {
         [Test]
-        public void <#= version #>_Request_LoginName_Ordering_Test1()
+        public void <#= namespaceVersion #>_Request_LoginName_Ordering_Test1()
         {
             // Arrange
             var builder1 = UserAuthRequest_Type.CreateBuilder()
@@ -23,7 +23,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
                 .UserDomain("workspace");
 
             var builder = TXLife_Type.CreateBuilder()
-                .Version("<#= niceVersion #>")
+                .Version("<#= version #>")
                 .AddUserAuthRequest(builder1.Build());
 
             var txLife = builder.Build();
@@ -42,7 +42,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_Request_LoginName_Ordering_Test2()
+        public void <#= namespaceVersion #>_Request_LoginName_Ordering_Test2()
         {
             // Arrange
             var builder1 = UserAuthRequest_Type.CreateBuilder()
@@ -51,7 +51,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
                 .UserDomain("workspace");
 
             var builder = TXLife_Type.CreateBuilder()
-                .Version("<#= niceVersion #>")
+                .Version("<#= version #>")
                 .AddUserAuthRequest(builder1.Build());
 
             var txLife = builder.Build();

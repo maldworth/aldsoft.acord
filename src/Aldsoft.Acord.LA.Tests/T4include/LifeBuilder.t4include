@@ -1,11 +1,12 @@
 ﻿<#+
 void GenerateLifeBuilder(string version)
 {
+var namespaceVersion = "V" + version.Replace(".","_");
 #>
-namespace Aldsoft.Acord.LA.Tests.<#= version #>
+namespace Aldsoft.Acord.LA.Tests.<#= namespaceVersion #>
 {
-    extern alias <#= version #>;
-    using <#= version #>::Aldsoft.Acord.LA;
+    extern alias <#= namespaceVersion #>;
+    using <#= namespaceVersion #>::Aldsoft.Acord.LA;
     using NUnit.Framework;
     using System;
 
@@ -13,7 +14,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
     class LifeBuilderTests
     {
         [Test]
-        public void <#= version #>_LifeBuilder_NoBaseCoverage()
+        public void <#= namespaceVersion #>_LifeBuilder_NoBaseCoverage()
         {
             // Arrange
             var builder = Life_Type.CreateBuilder();
@@ -24,7 +25,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_LifeBuilder_CannotConstructWithCoverage()
+        public void <#= namespaceVersion #>_LifeBuilder_CannotConstructWithCoverage()
         {
             // Arrange/Act/Assert
             var ex = Assert.Throws<ArgumentException>(() => Life_Type.CreateBuilder(new Life_Type { Coverage = { new Coverage_Type() } }));
@@ -32,7 +33,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_LifeBuilder_CannotBuildWithCoverage()
+        public void <#= namespaceVersion #>_LifeBuilder_CannotBuildWithCoverage()
         {
             // Arrange
             var builder = Life_Type.CreateBuilder();
@@ -44,7 +45,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_LifeBuilder_ConstructWithLife()
+        public void <#= namespaceVersion #>_LifeBuilder_ConstructWithLife()
         {
             // Arrange
             var builder = Life_Type.CreateBuilder(new Life_Type { id = "Life1" });
@@ -60,7 +61,7 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
         }
 
         [Test]
-        public void <#= version #>_LifeBuilder_BuildWithLife()
+        public void <#= namespaceVersion #>_LifeBuilder_BuildWithLife()
         {
             // Arrange
             var builder = Life_Type.CreateBuilder()

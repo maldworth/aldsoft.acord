@@ -1,12 +1,12 @@
 ﻿<#+
 void GenerateOLifEBuilder(string version)
 {
-var niceVersion = version.Substring(1).Replace("_",".");
+var namespaceVersion = "V" + version.Replace(".","_");
 #>
-namespace Aldsoft.Acord.LA.Tests.<#= version #>
+namespace Aldsoft.Acord.LA.Tests.<#= namespaceVersion #>
 {
-    extern alias <#= version #>;
-    using <#= version #>::Aldsoft.Acord.LA;
+    extern alias <#= namespaceVersion #>;
+    using <#= namespaceVersion #>::Aldsoft.Acord.LA;
     using NUnit.Framework;
     using System;
 
@@ -14,10 +14,10 @@ namespace Aldsoft.Acord.LA.Tests.<#= version #>
     class OLifEBuilderTests
     {
         [Test]
-        public void <#= version #>_Relationship_Test1()
+        public void <#= namespaceVersion #>_Relationship_Test1()
         {
             var builder = TXLife_Type.CreateBuilder()
-                .Version("<#= niceVersion #>")
+                .Version("<#= version #>")
                 .AddTXLifeRequest(new TXLifeRequest_Type
                 {
                     TransRefGUID = "ACORD_001_Relation_Samples",
