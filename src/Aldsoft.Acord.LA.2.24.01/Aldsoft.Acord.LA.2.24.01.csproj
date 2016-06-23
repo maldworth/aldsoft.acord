@@ -30,7 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\aldsoft.acord.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,6 +50,11 @@
     <Compile Include="..\SolutionVersion.cs">
       <Link>Properties\SolutionVersion.cs</Link>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\aldsoft.acord.snk">
+      <Link>aldsoft.acord.snk</Link>
+    </None>
   </ItemGroup>
   <Import Project="..\Aldsoft.Acord\Aldsoft.Acord.projitems" Label="Shared" />
   <Import Project="..\Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems" Label="Shared" />

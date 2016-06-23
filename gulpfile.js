@@ -12,27 +12,44 @@ var request = require('request');
 
 //#### Config Variables
 var gitHash;
+var gitBranchName;
 var buildArtifactPath = './build_artifacts';
+var nugetExe = 'nuget.exe';
+var nugetExePath = './' + nugetExe;
 var nugetPackagesPath = './src/packages';
-var keyFile = './aldsoft.acord.snk';
+var nunitExe = 'nunit3-console.exe';
+var testResultsPath = './TestResult.xml';
 
 //# assemblyInfo
-gulp.task('assemblyInfo', ['hash'], function() {
+gulp.task('assemblyInfo', ['branchName','hash'], function() {
+	var version = '0.0.0';
+	if (args.buildVersion) {
+		version = args.buildVersion;
+	}
+	
     return gulp
         .src('**/SolutionVersion.cs')
         .pipe(assemblyInfo({
-            version: args.buildVersion,
-            fileVersion: args.buildVersion,
-			informationalVersion: args.buildVersion + ' (master\\\\'+gitHash+')'
+            version: version,
+            fileVersion: version,
+			informationalVersion: version + ' ('+gitBranchName+'\\\\'+gitHash+')'
         }))
         .pipe(gulp.dest('.'));
 });
 
+//# branchName
+gulp.task('branchName', function(callback) {
+	return git.revParse({args:'--abbrev-ref HEAD'}, function (err, branchName) {
+		if (err) throw err;
+		gitBranchName = branchName;
+		callback();
+	});
+});
+
 //# build
-gulp.task('build', ['assemblyInfo','nuget-download','clean'], function(callback) {
+gulp.task('build', ['clean','assemblyInfo','nuget-download','nuget-restore'], function() {
     return gulp
         .src('**/*.sln')
-		.pipe(nuget.restore())
         .pipe(msbuild({
             toolsVersion: 14.0,
             targets: ['Clean', 'Build'],
@@ -44,12 +61,12 @@ gulp.task('build', ['assemblyInfo','nuget-download','clean'], function(callback)
 //# clean
 gulp.task('clean', function() {
     return gulp
-        .src(['**/bin/','**/obj/',nugetPackagesPath,buildArtifactPath], { read: false })
+        .src(['**/bin/','**/obj/',nugetExePath,nugetPackagesPath,buildArtifactPath,testResultsPath], { read: false })
         .pipe(clean());
 });
 
 //# deploy
-gulp.task('deploy', function() {
+gulp.task('package', ['nuget-download'], function() {
   return gulp.src(['src/Aldsoft.Acord.LA.*/*.csproj','!src/Aldsoft.Acord.LA.Tests/*.csproj'])
     .pipe(nuget.pack(
 	{
@@ -69,12 +86,20 @@ gulp.task('hash', function(callback) {
 
 //# nuget-download
 gulp.task('nuget-download', function(callback) {
-    if(fs.existsSync('nuget.exe')) {
+    if(fs.existsSync(nugetExePath)) {
         return callback();
     }
     request.get('https://nuget.org/nuget.exe')
-        .pipe(fs.createWriteStream('nuget.exe'))
+        .pipe(fs.createWriteStream(nugetExe))
         .on('close', callback);
+});
+
+//# nuget-restore
+gulp.task('nuget-restore', ['nuget-download'], function(callback) {
+	var stream = gulp
+        .src('**/*.sln')
+		.pipe(nuget.restore());
+    return stream;
 });
 
 //# test
@@ -82,7 +107,7 @@ gulp.task('test', function () {
     return gulp
         .src(['**/bin/**/*Tests.dll'], { read: false })
         .pipe(nunit({
-			executable: 'nunit3-console.exe',
+			executable: nunitExe,
 			nologo: true,
 			config: 'Release'
 		}));
