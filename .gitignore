@@ -211,5 +211,6 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 
+build_artifacts/
 src/Aldsoft.Acord.LA.Tests/Tests.cs
 nuget.exe

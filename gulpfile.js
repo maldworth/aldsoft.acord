@@ -9,10 +9,15 @@ var nuget = require('gulp-nuget');
 var nunit = require('gulp-nunit-runner');
 var request = require('request');
 
-
 //#### Config Variables
-var gitHash;
-var gitBranchName;
+var isAppVeyor = Boolean(process.env.APPVEYOR);
+var semVer = process.env.SEMVER || '0.0.0'
+//var buildVersion = process.env.APPVEYOR_BUILD_VERSION || '0.0.0';
+var buildNumber = process.env.APPVEYOR_BUILD_NUMBER || '0';
+var gitHash = process.env.APPVEYOR_REPO_COMMIT;
+var gitBranchName = process.env.APPVEYOR_REPO_BRANCH;
+
+//### Paths
 var buildArtifactPath = './build_artifacts';
 var nugetExe = 'nuget.exe';
 var nugetExePath = './' + nugetExe;
@@ -22,28 +27,38 @@ var testResultsPath = './TestResult.xml';
 
 //# assemblyInfo
 gulp.task('assemblyInfo', ['branchName','hash'], function() {
-	var version = '0.0.0';
+	var version = semVer;
+	hash = gitHash;
+	if (isAppVeyor) {
+		hash = 'nocommit';
+	}
 	if (args.buildVersion) {
 		version = args.buildVersion;
 	}
+	
+	version = version + '.' + buildNumber;
 	
     return gulp
         .src('**/SolutionVersion.cs')
         .pipe(assemblyInfo({
             version: version,
             fileVersion: version,
-			informationalVersion: version + ' ('+gitBranchName+'\\\\'+gitHash+')'
+			informationalVersion: semVer + '+build.' + buildNumber + ' (' + gitBranchName + '\\\\' + hash + ')'
         }))
         .pipe(gulp.dest('.'));
 });
 
 //# branchName
 gulp.task('branchName', function(callback) {
-	return git.revParse({args:'--abbrev-ref HEAD'}, function (err, branchName) {
-		if (err) throw err;
-		gitBranchName = branchName;
+	if(gitBranchName) {
 		callback();
-	});
+	} else {
+		return git.revParse({args:'--abbrev-ref HEAD'}, function (err, branchName) {
+			if (err) throw err;
+			gitBranchName = branchName;
+			callback();
+		});
+	}
 });
 
 //# build
@@ -70,18 +85,24 @@ gulp.task('package', ['nuget-download'], function() {
   return gulp.src(['src/Aldsoft.Acord.LA.*/*.csproj','!src/Aldsoft.Acord.LA.Tests/*.csproj'])
     .pipe(nuget.pack(
 	{
-		properties: 'configuration=release'
+		properties: 'configuration=release',
+		version: semVer
 	}))
     .pipe(gulp.dest(buildArtifactPath));
 });
 
 //# hash
 gulp.task('hash', function(callback) {
-	return git.revParse({args:'--short HEAD'}, function (err, hash) {
-		if (err) throw err;
-		gitHash = hash;
+	if (gitHash) {
+		gitHash = gitHash.substring(0,7);
 		callback();
-	});
+	} else {
+		return git.revParse({args:'--short HEAD'}, function (err, hash) {
+			if (err) throw err;
+			gitHash = hash;
+			callback();
+		});
+	}
 });
 
 //# nuget-download

@@ -1,0 +1,35 @@
+version: $(SEMVER).{build}
+pull_requests:
+  do_not_increment_build_number: true
+skip_tags: true
+configuration: Release
+environment:
+  SEMVER: 0.2.0
+install:
+- cmd: >-
+    npm install gulp -g
+
+    npm install
+nuget:
+  account_feed: true
+  project_feed: true
+  disable_publish_on_pr: true
+before_build:
+- cmd: >-
+    gulp assemblyInfo
+
+    gulp nuget-restore
+build:
+  verbosity: minimal
+after_build:
+- cmd: gulp package
+test:
+  assemblies: '**/bin/**/*Tests.dll'
+artifacts:
+- path: ./build_artifacts/*
+deploy:
+- provider: NuGet
+  api_key:
+    secure: z6cDXSKl0lmrwt2tyEoh9erTKzT+1xaHhgOItxewQRxvxmSrqQrTO+UUkVABruZp
+  on:
+    branch: master
