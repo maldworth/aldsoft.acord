@@ -4,7 +4,7 @@ pull_requests:
 skip_tags: true
 configuration: Release
 environment:
-  SEMVER: 0.2.0
+  SEMVER: 0.2.1
 install:
 - cmd: >-
     npm install gulp -g
@@ -28,8 +28,7 @@ test:
 artifacts:
 - path: ./build_artifacts/*
 deploy:
-- provider: NuGet
-  api_key:
-    secure: z6cDXSKl0lmrwt2tyEoh9erTKzT+1xaHhgOItxewQRxvxmSrqQrTO+UUkVABruZp
+- provider: Environment
+  name: nuget
   on:
-    branch: master
+    appveyor_repo_tag: true
