@@ -21,6 +21,9 @@
     "gulp-msbuild": "^0.3.2",
     "gulp-nuget": "^1.0.1",
     "gulp-nunit-runner": "^0.5.2",
+    "gulp-rename": "^1.2.2",
+    "merge-stream": "^1.0.0",
+    "path": "^0.12.7",
     "request": "^2.72.0",
     "yargs": "^4.7.1"
   }
