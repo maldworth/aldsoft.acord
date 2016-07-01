@@ -2,7 +2,8 @@ Aldsoft.ACORD
 =============
 
 [![Build status](https://ci.appveyor.com/api/projects/status/virrchbiy7477800?svg=true)](https://ci.appveyor.com/project/maldworth/aldsoft-acord)
-[![NuGet](https://img.shields.io/nuget/v/aldsoft.acord.la.2.24.01.svg)](https://www.nuget.org/packages?q=Tags%3A%22aldsoft%22)
+[![NuGet](https://img.shields.io/nuget/v/aldsoft.acord.la.2.24.01.svg)](https://www.nuget.org/packages?q=Tags%3A%22acord%22)
+[![Rtfd](https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat)](http://aldsoftacord.readthedocs.io/en/latest/?badge=latest)
 
 Aldsoft.ACORD is a **free, open-source** library that helps serialize and deserialize the ACORD LA XML standard. The library follows the ACORD XML Schema, so if you have trouble deserializing your ACORD XML string, then it probably wouldn't pass ACORD xsd validation.
 
@@ -10,11 +11,11 @@ The library also provides a helpful Fluent API for constructing the ACORD XML Ob
 
 ## Getting Started
 
-There will be documentation shortly provided on Read The Docs. But for now, below will need to suffice.
+[Read The Docs](http://aldsoftacord.readthedocs.org/)
 
 ### 30 Second Tutorial:
 
-`install-package <nuget package coming soon>`
+`install-package aldsoft.acord.la.<acord version>`
 
 #### Construct and object and then Serialize:
 
@@ -60,6 +61,12 @@ var txLifeObjectFromFile = TXLife_Type.LoadFromFile("c:\\path\\to\\file.xml");
  1. Clone the source down to your machine.
  1. Build in visual studio
 
+## Building from Source (with gulp)
+
+ 1. Clone the source down to your machine.
+ 1. Make sure you have gulp installed with npm `npm install gulp -g`
+ 1. Then in the project dir enter `npm install`, and then `gulp build`
+
 ## Contributing
 
  1. Make sure you have Visual Studio extension EditorConfig installed
@@ -68,7 +75,7 @@ var txLifeObjectFromFile = TXLife_Type.LoadFromFile("c:\\path\\to\\file.xml");
 
 ## Builds
 
-Will be getting Appveyor going soon.
+Appveyor is used as the CI build server. Nuget and GitHub Release Drafts are deployed through Appveyor.
 
 # Requirements
 * .Net 4.0 or greater
