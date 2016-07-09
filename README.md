@@ -59,7 +59,7 @@ var txLifeObjectFromFile = TXLife_Type.LoadFromFile("c:\\path\\to\\file.xml");
 ## Building from Source
 
  1. Clone the source down to your machine.
- 1. Build in visual studio
+ 1. Build in visual Studio 2015
 
 ## Building from Source (with gulp)
 

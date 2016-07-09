@@ -15,6 +15,7 @@ helpful semi-Fluent API for constructing the ACORD XML Object programatically.
     overview/overview.rst
     installation/installation.rst
     usage/usage.rst
+    usage/sample.rst
 
 Indices and tables
 ==================
