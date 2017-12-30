@@ -130,7 +130,7 @@ gulp.task('nuget-download', function (callback) {
 gulp.task('nuget-restore', ['nuget-download'], function (callback) {
   var stream = gulp
     .src('**/*.sln')
-    .pipe(nuget.restore());
+    .pipe(nuget.restore({configFile: './src/nuget.config'}));
   return stream;
 });
 
