@@ -90,14 +90,14 @@
         public static UserAuthRequestBuilder CreateBuilder() { return new UserAuthRequestBuilder(); }
         public static UserAuthRequestBuilder CreateBuilder(UserAuthRequest_Type userAuthRequest) { return new UserAuthRequestBuilder(userAuthRequest); }
 
-        private readonly ItemsChoiceType1[] _xmlSequenceOrder = {
-            ItemsChoiceType1.UserSessionKey,
-            ItemsChoiceType1.UserLoginName,
-            ItemsChoiceType1.UserPswd,
-            ItemsChoiceType1.UserAuthentication
+        private readonly ItemsChoiceType2[] _xmlSequenceOrder = {
+            ItemsChoiceType2.UserSessionKey,
+            ItemsChoiceType2.UserLoginName,
+            ItemsChoiceType2.UserPswd,
+            ItemsChoiceType2.UserAuthentication
         };
 
-        private readonly Dictionary<ItemsChoiceType1, LinkedList<Action<List<object>>>> _buildActions = new Dictionary<ItemsChoiceType1, LinkedList<Action<List<object>>>>();
+        private readonly Dictionary<ItemsChoiceType2, LinkedList<Action<List<object>>>> _buildActions = new Dictionary<ItemsChoiceType2, LinkedList<Action<List<object>>>>();
 
         protected UserAuthRequestBuilder()
             : base()
@@ -145,7 +145,7 @@
         {
             // Ensures proper order of Items as per section 7.568
             var items = new List<object>();
-            var itemsElementName = new List<ItemsChoiceType1>();
+            var itemsElementName = new List<ItemsChoiceType2>();
             foreach (var type in _xmlSequenceOrder)
             {
                 LinkedListNode<Action<List<object>>> currentNode = _buildActions[type].First;
@@ -163,25 +163,25 @@
 
         public override Sans_UserAuthentication_Or_UserPswd_UserAuthRequestBuilder UserAuthentication(UserAuthentication_Type userAuthentication)
         {
-            _buildActions[ItemsChoiceType1.UserAuthentication].AddLast(n => n.Add(userAuthentication));
+            _buildActions[ItemsChoiceType2.UserAuthentication].AddLast(n => n.Add(userAuthentication));
             return this;
         }
 
         public override Sans_UserLoginName_UserAuthRequestBuilder UserLoginName(string userLoginName)
         {
-            _buildActions[ItemsChoiceType1.UserLoginName].AddLast(n => n.Add(userLoginName));
+            _buildActions[ItemsChoiceType2.UserLoginName].AddLast(n => n.Add(userLoginName));
             return this;
         }
 
         public override Sans_UserAuthentication_Or_UserPswd_UserAuthRequestBuilder UserPswd(UserPswd_Type userPswd)
         {
-            _buildActions[ItemsChoiceType1.UserPswd].AddLast(n => n.Add(userPswd));
+            _buildActions[ItemsChoiceType2.UserPswd].AddLast(n => n.Add(userPswd));
             return this;
         }
 
         public override Sans_RestrictedOptions UserSessionKey(string userSessionKey)
         {
-            _buildActions[ItemsChoiceType1.UserSessionKey].AddLast(n => n.Add(userSessionKey));
+            _buildActions[ItemsChoiceType2.UserSessionKey].AddLast(n => n.Add(userSessionKey));
             return this;
         }
 

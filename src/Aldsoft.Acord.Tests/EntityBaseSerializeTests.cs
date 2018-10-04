@@ -1,13 +1,13 @@
 ﻿namespace Aldsoft.Acord.Tests
 {
     using Entities;
-    using NUnit.Framework;
     using System.Text;
     using System.Xml;
-    [TestFixture]
-    class EntityBaseSerializeTests
+    using Xunit;
+
+    public class EntityBaseSerializeTests
     {
-        [Test]
+        [Fact]
         public void Serialize_Test1()
         {
             // Arrange
@@ -28,13 +28,13 @@
             author.Serialize(out xmlString);
             
             // Assert
-            Assert.IsNotNull(xmlString);
-            Assert.IsTrue(xmlString.Contains("utf-8"));
-            Assert.IsTrue(xmlString.Contains("<MockAuthor"));
-            Assert.IsTrue(xmlString.Contains("<ISBN>0123456789</ISBN>"));
+            Assert.NotNull(xmlString);
+            Assert.Contains("utf-8", xmlString);
+            Assert.Contains("<MockAuthor", xmlString);
+            Assert.Contains("<ISBN>0123456789</ISBN>", xmlString);
         }
 
-        [Test]
+        [Fact]
         public void Serialize_XmlWriterSettings()
         {
             // Arrange
@@ -45,12 +45,12 @@
             author.Serialize(new XmlWriterSettings { Encoding = Encoding.ASCII }, out xmlString);
 
             // Assert
-            Assert.IsNotNull(xmlString);
-            Assert.IsTrue(xmlString.Contains("us-ascii"));
-            Assert.IsTrue(xmlString.Contains("<Firstname>Bill</Firstname>"));
+            Assert.NotNull(xmlString);
+            Assert.Contains("us-ascii", xmlString);
+            Assert.Contains("<Firstname>Bill</Firstname>", xmlString);
         }
 
-        //[Test]
+        //[Fact]
         //public void Test2()
         //{
         //    var builder = TXLifeBuilder.CreateBuilder().Version("2.35.00").AddTXLifeRequest(new TXLifeRequest_Type() { id = "1" }).AddUserAuthRequest(new UserAuthRequest_Type()).AddTXLifeRequest(new TXLifeRequest_Type() { id="2" });
@@ -68,9 +68,9 @@
         //    txLife.Serialize(out xmlString);
         //    txLife.SaveToFile("C:\\Users\\mike\\unit_test.xml");
         //    // Assert
-        //    Assert.IsNotNull(xmlString);
-        //    Assert.IsTrue(xmlString.Contains("utf-8"));
-        //    //Assert.IsTrue(xmlString.Contains("<Party id=\"Party_1\" />"));
+        //    Assert.NotNull(xmlString);
+        //    Assert.True(xmlString.Contains("utf-8"));
+        //    //Assert.True(xmlString.Contains("<Party id=\"Party_1\" />"));
         //}
     }
 }

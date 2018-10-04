@@ -1,16 +1,16 @@
 ﻿namespace Aldsoft.Acord.Tests
 {
-    using NUnit.Framework;
     using Entities;
     using System.IO;
     using System.Reflection;
     using System.Text;
-    [TestFixture]
-    class EntityBaseSaveLoadFileTests
+    using Xunit;
+
+    public class EntityBaseSaveLoadFileTests
     {
         const string XML_TEST_STRING = "<?xml version=\"1.0\" encoding=\"utf-8\"?><MockAuthor xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><Firstname>Alice</Firstname><Lastname>Smith</Lastname><Books><MockBook><ISBN>122</ISBN><Title>Hi World!</Title></MockBook><MockBook><ISBN>123</ISBN><Title>Hi World: Part 2</Title></MockBook></Books></MockAuthor>";
 
-        [Test]
+        [Fact]
         public void EntityBaseSaveToFile_Test1()
         {
             // Arrange
@@ -31,13 +31,13 @@
 
             // Assert
             var xmlString = File.ReadAllText(outputFile);
-            Assert.IsNotNull(xmlString);
-            Assert.IsTrue(xmlString.Contains("utf-8"));
-            Assert.IsTrue(xmlString.Contains("<MockAuthor"));
-            Assert.IsTrue(xmlString.Contains("<ISBN>0123456789</ISBN>"));
+            Assert.NotNull(xmlString);
+            Assert.Contains("utf-8", xmlString);
+            Assert.Contains("<MockAuthor", xmlString);
+            Assert.Contains("<ISBN>0123456789</ISBN>", xmlString);
         }
 
-        [Test]
+        [Fact]
         public void EntityBaseSaveToFile_XmlWriterSettings()
         {
             // Arrange
@@ -58,13 +58,13 @@
 
             // Assert
             var xmlString = File.ReadAllText(outputFile);
-            Assert.IsNotNull(xmlString);
-            Assert.IsTrue(xmlString.Contains("us-ascii"));
-            Assert.IsTrue(xmlString.Contains("<MockAuthor"));
-            Assert.IsTrue(xmlString.Contains("<ISBN>0123456789</ISBN>"));
+            Assert.NotNull(xmlString);
+            Assert.Contains("us-ascii", xmlString);
+            Assert.Contains("<MockAuthor", xmlString);
+            Assert.Contains("<ISBN>0123456789</ISBN>", xmlString);
         }
 
-        [Test]
+        [Fact]
         public void EntityBaseLoadFromFile_Test1()
         {
             // Arrange
@@ -75,12 +75,12 @@
             var author = MockAuthor.LoadFromFile(outputFile);
 
             // Assert
-            Assert.IsNotNull(author);
-            Assert.AreEqual("Alice", author.Firstname);
-            Assert.AreEqual(2,author.Books.Count);
+            Assert.NotNull(author);
+            Assert.Equal("Alice", author.Firstname);
+            Assert.Equal(2,author.Books.Count);
         }
 
-        [Test]
+        [Fact]
         public void EntityBaseLoadFromFile_XmlReaderSettings()
         {
             // Arrange
@@ -91,9 +91,9 @@
             var author = MockAuthor.LoadFromFile(outputFile, new System.Xml.XmlReaderSettings());
 
             // Assert
-            Assert.IsNotNull(author);
-            Assert.AreEqual("Alice", author.Firstname);
-            Assert.AreEqual(2, author.Books.Count);
+            Assert.NotNull(author);
+            Assert.Equal("Alice", author.Firstname);
+            Assert.Equal(2, author.Books.Count);
         }
     }
 }

@@ -2,13 +2,13 @@ namespace Aldsoft.Acord.LA.Tests.V2_25_00
 {
     extern alias V2_25_00;
     using V2_25_00::Aldsoft.Acord.LA;
-    using NUnit.Framework;
+    using Xunit;
     using System;
 
-    [TestFixture]
-    class TXLifeBuilderTests
+    
+    public class TXLifeBuilderTests
     {
-        [Test]
+        [Fact]
         public void V2_25_00_Request_Ordering_Test1()
         {
             // Arrange
@@ -34,17 +34,17 @@ namespace Aldsoft.Acord.LA.Tests.V2_25_00
             var oLifeIndex = xmlString.IndexOf("VendorCode=\"a\"");
 
             // Ensures the user auth appears first
-            Assert.IsTrue(authRequestIndex < id3Index);
+            Assert.True(authRequestIndex < id3Index);
 
             // Ensures order is preserved of the requests
-            Assert.IsTrue(id3Index < id1Index);
-            Assert.IsTrue(id1Index < id2Index);
+            Assert.True(id3Index < id1Index);
+            Assert.True(id1Index < id2Index);
 
             // Ensures olife is present
-            Assert.IsTrue(xmlString.Contains("VendorCode=\"a\""));
+            Assert.Contains("VendorCode=\"a\"", xmlString);
         }
 
-        [Test]
+        [Fact]
         public void V2_25_00_Response_Ordering_Test1()
         {
             // Arrange
@@ -75,19 +75,19 @@ namespace Aldsoft.Acord.LA.Tests.V2_25_00
             var oLifeIndex = xmlString.IndexOf("VendorCode=\"a\"");
 
             // Ensures the user auth appears first
-            Assert.IsTrue(authResponseIndex < id3Index);
+            Assert.True(authResponseIndex < id3Index);
 
             // Ensures order is preserved of the requests
-            Assert.IsTrue(id3Index < id1Index);
-            Assert.IsTrue(id1Index < id2Index);
-            Assert.IsTrue(id2Index < guid1Index);
-            Assert.IsTrue(guid1Index < guid2Index);
+            Assert.True(id3Index < id1Index);
+            Assert.True(id1Index < id2Index);
+            Assert.True(id2Index < guid1Index);
+            Assert.True(guid1Index < guid2Index);
 
             // Ensures olife is present
-            Assert.IsTrue(xmlString.Contains("VendorCode=\"a\""));
+            Assert.Contains("VendorCode=\"a\"", xmlString);
         }
 
-        [Test]
+        [Fact]
         public void V2_25_00_UserAuthRequest_Builder_Test1()
         {
             // Arrange
@@ -106,7 +106,7 @@ namespace Aldsoft.Acord.LA.Tests.V2_25_00
             txLife.Serialize(out xmlString);
 
             // Assert
-            Assert.IsTrue(xmlString.Contains("<UserAuthentication id=\"testauth\" />"));
+            Assert.Contains("<UserAuthentication id=\"testauth\" />", xmlString);
         }
     }
 }

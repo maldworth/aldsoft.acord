@@ -9,7 +9,7 @@
     using System.Xml.Serialization;
 
     [Serializable]
-    public partial class EntityBase<T> : System.ComponentModel.INotifyPropertyChanged
+    public partial class EntityBase<T>
     {
         private static XmlSerializer _serializer;
 
@@ -24,19 +24,6 @@
                 return _serializer;
             }
         }
-
-        #region INotifyPropertyChanged
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        public virtual void OnPropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler handler = this.PropertyChanged;
-            if ((handler != null))
-            {
-                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-        #endregion
 
         #region Deserialize
         /// <summary>

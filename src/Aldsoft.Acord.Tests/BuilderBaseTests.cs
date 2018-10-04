@@ -1,26 +1,26 @@
 ﻿namespace Aldsoft.Acord.Tests
 {
-    using NUnit.Framework;
     using Entities;
     using System;
-    [TestFixture]
-    class BuilderBaseTests
+    using Xunit;
+
+    public class BuilderBaseTests
     {
-        [Test]
+        [Fact]
         public void BuilderBaseTests_BuildConstructorEntity_ValidateBaseObject()
         {
             var ex = Assert.Throws<ArgumentException>(() => MockBook.CreateBuilder(new MockBook { ISBN = "111" }));
-            Assert.AreEqual("Bad ISBN", ex.Message);
+            Assert.Equal("Bad ISBN", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void BuilderBaseTests_BuildWithEntity_ValidateBaseObject()
         {
             var ex = Assert.Throws<ArgumentException>(() => MockBook.CreateBuilder().Build(new MockBook { ISBN = "111" }));
-            Assert.AreEqual("Bad ISBN", ex.Message);
+            Assert.Equal("Bad ISBN", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void BuilderBaseTests_BuildEmpty_DifferentObjects()
         {
             var builder = MockBook.CreateBuilder();
@@ -29,14 +29,14 @@
 
             var newBook2 = builder.Build();
 
-            Assert.IsNotNull(newBook1);
-            Assert.IsNotNull(newBook2);
-            Assert.IsNull(newBook1.Title);
-            Assert.IsNull(newBook2.Title);
-            Assert.AreNotEqual(newBook1, newBook2);
+            Assert.NotNull(newBook1);
+            Assert.NotNull(newBook2);
+            Assert.Null(newBook1.Title);
+            Assert.Null(newBook2.Title);
+            Assert.NotEqual(newBook1, newBook2);
         }
 
-        [Test]
+        [Fact]
         public void BuilderBaseTests_BuildConstructorEntity_DifferentObjects()
         {
             var builder = MockBook.CreateBuilder(new MockBook { ISBN = "112" });
@@ -45,13 +45,13 @@
 
             var newBook2 = builder.Build();
 
-            Assert.IsNotNull(newBook1);
-            Assert.IsNotNull(newBook2);
-            Assert.AreNotEqual(newBook1, newBook2);
-            Assert.AreEqual(newBook1.ISBN, newBook2.ISBN);
+            Assert.NotNull(newBook1);
+            Assert.NotNull(newBook2);
+            Assert.NotEqual(newBook1, newBook2);
+            Assert.Equal(newBook1.ISBN, newBook2.ISBN);
         }
 
-        [Test]
+        [Fact]
         public void BuilderBaseTests_BuildWithEntity_DifferentObjects()
         {
             var builder = MockBook.CreateBuilder();
@@ -62,26 +62,26 @@
 
             var newBook2 = builder.Build(baseEntity);
 
-            Assert.IsNotNull(newBook1);
-            Assert.IsNotNull(newBook2);
-            Assert.AreNotEqual(newBook1, newBook2);
-            Assert.AreEqual(newBook1.ISBN, newBook2.ISBN);
+            Assert.NotNull(newBook1);
+            Assert.NotNull(newBook2);
+            Assert.NotEqual(newBook1, newBook2);
+            Assert.Equal(newBook1.ISBN, newBook2.ISBN);
         }
 
-        [Test]
+        [Fact]
         public void BuilderBaseTests_BuildWithNullEntity()
         {
             var ex = Assert.Throws<ArgumentNullException>(() => MockBook.CreateBuilder(null));
-            Assert.AreEqual("Value cannot be null.\r\nParameter name: baseEntity", ex.Message);
+            Assert.Equal("Value cannot be null.\r\nParameter name: baseEntity", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void BuilderBaseTests_BuildWithPropertiesAction()
         {
             var book = MockBook.CreateBuilder().SetTitle("Hello World").Build();
 
-            Assert.IsNotNull(book);
-            Assert.AreEqual("Hello World", book.Title);
+            Assert.NotNull(book);
+            Assert.Equal("Hello World", book.Title);
         }
     }
 }

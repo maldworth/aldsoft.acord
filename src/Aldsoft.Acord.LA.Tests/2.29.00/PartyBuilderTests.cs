@@ -2,13 +2,13 @@ namespace Aldsoft.Acord.LA.Tests.V2_29_00
 {
     extern alias V2_29_00;
     using V2_29_00::Aldsoft.Acord.LA;
-    using NUnit.Framework;
+    using Xunit;
     using System;
 
-    [TestFixture]
-    class PartyBuilderTests
+    
+    public class PartyBuilderTests
     {
-        [Test]
+        [Fact]
         public void V2_29_00_PartyBuilder_NotSet_Test1()
         {
             // Arrange
@@ -16,10 +16,10 @@ namespace Aldsoft.Acord.LA.Tests.V2_29_00
 
             // Act/Assert
             var ex = Assert.Throws<InvalidOperationException>(() => builder.Build());
-            Assert.AreEqual("You cannot build the Party_Type entity without first setting the PartyTypeCode.",ex.Message);
+            Assert.Equal("You cannot build the Party_Type entity without first setting the PartyTypeCode.",ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void V2_29_00_PartyBuilder_NotSet_Test2()
         {
             // Arrange
@@ -27,26 +27,26 @@ namespace Aldsoft.Acord.LA.Tests.V2_29_00
 
             // Act/Assert
             var ex = Assert.Throws<InvalidOperationException>(() => builder.Build(new Party_Type { id="Party1" }));
-            Assert.AreEqual("You cannot build the Party_Type entity without first setting the PartyTypeCode.", ex.Message);
+            Assert.Equal("You cannot build the Party_Type entity without first setting the PartyTypeCode.", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void V2_29_00_PartyBuilder_CreateBuilder_CannotSetPartyTypeCode()
         {
             // Arrange/Act/Assert
             var ex = Assert.Throws<ArgumentException>(() => Party_Type.CreateBuilder(new Party_Type { PartyTypeCode = OLI_LU_PARTY.OLI_PT_PERSON }));
-            Assert.IsTrue(ex.Message.Contains("The Party_Type.PartyTypeCode value should not be set."));
+            Assert.Contains("The Party_Type.PartyTypeCode value should not be set.", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void V2_29_00_PartyBuilder_CreateBuilder_CannotSetItem()
         {
             // Arrange/Act/Assert
             var ex = Assert.Throws<ArgumentException>(() => Party_Type.CreateBuilder(new Party_Type { Item = new Person_Type() }));
-            Assert.IsTrue(ex.Message.Contains("The Party_Type.Item value should not be set."));
+            Assert.Contains("The Party_Type.Item value should not be set.", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void V2_29_00_PartyBuilder_Build_CannotSetPartyTypeCode()
         {
             // Arrange
@@ -55,10 +55,10 @@ namespace Aldsoft.Acord.LA.Tests.V2_29_00
 
             // Act/Assert
             var ex = Assert.Throws<ArgumentException>(() => builder.Build(new Party_Type { PartyTypeCode = OLI_LU_PARTY.OLI_PT_PERSON }));
-            Assert.IsTrue(ex.Message.Contains("The Party_Type.PartyTypeCode value should not be set."));
+            Assert.Contains("The Party_Type.PartyTypeCode value should not be set.", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void V2_29_00_PartyBuilder_Build_CannotSetItem()
         {
             // Arrange
@@ -67,10 +67,10 @@ namespace Aldsoft.Acord.LA.Tests.V2_29_00
 
             // Act/Assert
             var ex = Assert.Throws<ArgumentException>(() => builder.Build(new Party_Type { Item = new Person_Type() }));
-            Assert.IsTrue(ex.Message.Contains("The Party_Type.Item value should not be set."));
+            Assert.Contains("The Party_Type.Item value should not be set.", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void V2_29_00_PartyBuilder_Unknown()
         {
             // Arrange
@@ -83,10 +83,10 @@ namespace Aldsoft.Acord.LA.Tests.V2_29_00
             entity.Serialize(out xmlString);
 
             // Assert
-            Assert.IsTrue(xmlString.Contains("<PartyTypeCode tc=\"0\">Unknown</PartyTypeCode>"));
+            Assert.Contains("<PartyTypeCode tc=\"0\">Unknown</PartyTypeCode>", xmlString);
         }
 
-        [Test]
+        [Fact]
         public void V2_29_00_PartyBuilder_Person()
         {
             // Arrange
@@ -99,10 +99,10 @@ namespace Aldsoft.Acord.LA.Tests.V2_29_00
             entity.Serialize(out xmlString);
 
             // Assert
-            Assert.IsTrue(xmlString.Contains("<Person id=\"Person1\" />"));
+            Assert.Contains("<Person id=\"Person1\" />", xmlString);
         }
 
-        [Test]
+        [Fact]
         public void V2_29_00_PartyBuilder_Organization()
         {
             // Arrange
@@ -115,7 +115,7 @@ namespace Aldsoft.Acord.LA.Tests.V2_29_00
             entity.Serialize(out xmlString);
 
             // Assert
-            Assert.IsTrue(xmlString.Contains("<Organization id=\"Org1\" />"));
+            Assert.Contains("<Organization id=\"Org1\" />", xmlString);
         }
     }
 }

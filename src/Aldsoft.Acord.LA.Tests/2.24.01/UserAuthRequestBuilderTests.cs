@@ -2,13 +2,13 @@ namespace Aldsoft.Acord.LA.Tests.V2_24_01
 {
     extern alias V2_24_01;
     using V2_24_01::Aldsoft.Acord.LA;
-    using NUnit.Framework;
+    using Xunit;
     using System;
 
-    [TestFixture]
-    class UserAuthRequestBuilderTests
+    
+    public class UserAuthRequestBuilderTests
     {
-        [Test]
+        [Fact]
         public void V2_24_01_Request_LoginName_Ordering_Test1()
         {
             // Arrange
@@ -33,10 +33,10 @@ namespace Aldsoft.Acord.LA.Tests.V2_24_01
             var authIndex = xmlString.IndexOf("<UserAuthentication id=\"512\" />");
 
             // Ensures the user login appears first
-            Assert.IsTrue(loginIndex < authIndex);
+            Assert.True(loginIndex < authIndex);
         }
 
-        [Test]
+        [Fact]
         public void V2_24_01_Request_LoginName_Ordering_Test2()
         {
             // Arrange
@@ -61,7 +61,7 @@ namespace Aldsoft.Acord.LA.Tests.V2_24_01
             var pswdIndex = xmlString.IndexOf("<UserPswd>");
 
             // Ensures the user login appears first
-            Assert.IsTrue(loginIndex < pswdIndex);
+            Assert.True(loginIndex < pswdIndex);
         }
     }
 }

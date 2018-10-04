@@ -1,199 +1,109 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{04D753AD-8759-4B6E-9089-E877E11A431C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aldsoft.Acord.LA.Tests</RootNamespace>
-    <AssemblyName>Aldsoft.Acord.LA.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>net452</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.2.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.2.1\lib\net40\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="xunit" Version="2.4.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="2.24.01\LifeBuilderTests.cs" />
-    <Compile Include="2.24.01\OLifEBuilderTests.cs" />
-    <Compile Include="2.24.01\PartyBuilderTests.cs" />
-    <Compile Include="2.24.01\TXLifeBuilderTests.cs" />
-    <Compile Include="2.24.01\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.25.00\LifeBuilderTests.cs" />
-    <Compile Include="2.25.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.25.00\PartyBuilderTests.cs" />
-    <Compile Include="2.25.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.25.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.26.00\LifeBuilderTests.cs" />
-    <Compile Include="2.26.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.26.00\PartyBuilderTests.cs" />
-    <Compile Include="2.26.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.26.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.27.00\LifeBuilderTests.cs" />
-    <Compile Include="2.27.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.27.00\PartyBuilderTests.cs" />
-    <Compile Include="2.27.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.27.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.28.00\LifeBuilderTests.cs" />
-    <Compile Include="2.28.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.28.00\PartyBuilderTests.cs" />
-    <Compile Include="2.28.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.28.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.29.00\LifeBuilderTests.cs" />
-    <Compile Include="2.29.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.29.00\PartyBuilderTests.cs" />
-    <Compile Include="2.29.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.29.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.30.00\LifeBuilderTests.cs" />
-    <Compile Include="2.30.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.30.00\PartyBuilderTests.cs" />
-    <Compile Include="2.30.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.30.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.31.00\LifeBuilderTests.cs" />
-    <Compile Include="2.31.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.31.00\PartyBuilderTests.cs" />
-    <Compile Include="2.31.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.31.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.32.00\LifeBuilderTests.cs" />
-    <Compile Include="2.32.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.32.00\PartyBuilderTests.cs" />
-    <Compile Include="2.32.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.32.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.33.00\LifeBuilderTests.cs" />
-    <Compile Include="2.33.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.33.00\PartyBuilderTests.cs" />
-    <Compile Include="2.33.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.33.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.34.00\LifeBuilderTests.cs" />
-    <Compile Include="2.34.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.34.00\PartyBuilderTests.cs" />
-    <Compile Include="2.34.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.34.00\UserAuthRequestBuilderTests.cs" />
-    <Compile Include="2.35.00\LifeBuilderTests.cs" />
-    <Compile Include="2.35.00\OLifEBuilderTests.cs" />
-    <Compile Include="2.35.00\PartyBuilderTests.cs" />
-    <Compile Include="2.35.00\TXLifeBuilderTests.cs" />
-    <Compile Include="2.35.00\UserAuthRequestBuilderTests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.24.01\Aldsoft.Acord.LA.2.24.01.csproj">
-      <Project>{e32b021e-5f82-40f8-ad9b-60ea3e032150}</Project>
-      <Name>Aldsoft.Acord.LA.2.24.01</Name>
       <Aliases>V2_24_01</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.25.00\Aldsoft.Acord.LA.2.25.00.csproj">
-      <Project>{13d0da8f-eddf-45f1-9f73-c9eb8c6cd962}</Project>
-      <Name>Aldsoft.Acord.LA.2.25.00</Name>
       <Aliases>V2_25_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.26.00\Aldsoft.Acord.LA.2.26.00.csproj">
-      <Project>{3621def5-4866-448f-b3f2-a4063252dcd5}</Project>
-      <Name>Aldsoft.Acord.LA.2.26.00</Name>
       <Aliases>V2_26_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.27.00\Aldsoft.Acord.LA.2.27.00.csproj">
-      <Project>{a279977e-3555-4071-b8ee-0c4ec720fa5b}</Project>
-      <Name>Aldsoft.Acord.LA.2.27.00</Name>
       <Aliases>V2_27_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.28.00\Aldsoft.Acord.LA.2.28.00.csproj">
-      <Project>{77fef0b7-b8a3-4353-8b19-4706bb4f0388}</Project>
-      <Name>Aldsoft.Acord.LA.2.28.00</Name>
       <Aliases>V2_28_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.29.00\Aldsoft.Acord.LA.2.29.00.csproj">
-      <Project>{6ec638b1-764f-4bc6-9ed7-831c6b971126}</Project>
-      <Name>Aldsoft.Acord.LA.2.29.00</Name>
       <Aliases>V2_29_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.30.00\Aldsoft.Acord.LA.2.30.00.csproj">
-      <Project>{619d756a-b5e8-41c1-9458-fce9cf92b5cd}</Project>
-      <Name>Aldsoft.Acord.LA.2.30.00</Name>
       <Aliases>V2_30_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.31.00\Aldsoft.Acord.LA.2.31.00.csproj">
-      <Project>{0ffc28ce-f851-4e1f-ae46-0ad3675e6d36}</Project>
-      <Name>Aldsoft.Acord.LA.2.31.00</Name>
       <Aliases>V2_31_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.32.00\Aldsoft.Acord.LA.2.32.00.csproj">
-      <Project>{8d7f856e-277f-47c7-8977-23bc0ea8486e}</Project>
-      <Name>Aldsoft.Acord.LA.2.32.00</Name>
       <Aliases>V2_32_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.33.00\Aldsoft.Acord.LA.2.33.00.csproj">
-      <Project>{4551f36b-4404-4a52-9890-ee900fa52433}</Project>
-      <Name>Aldsoft.Acord.LA.2.33.00</Name>
       <Aliases>V2_33_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.34.00\Aldsoft.Acord.LA.2.34.00.csproj">
-      <Project>{5cf70991-57ed-4b7e-9734-9d76a90f0e2a}</Project>
-      <Name>Aldsoft.Acord.LA.2.34.00</Name>
       <Aliases>V2_34_00</Aliases>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.35.00\Aldsoft.Acord.LA.2.35.00.csproj">
-      <Project>{142def4e-9b82-411f-a5d6-88d3db2cde29}</Project>
-      <Name>Aldsoft.Acord.LA.2.35.00</Name>
       <Aliases>V2_35_00</Aliases>
     </ProjectReference>
   </ItemGroup>
+
+
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="T4include\LifeBuilder.t4include" />
-    <None Include="T4include\OLifEBuilder.t4include" />
-    <None Include="T4include\PartyBuilder.t4include" />
-    <Content Include="Tests.tt">
+    <None Update="Tests.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Tests.cs</LastGenOutput>
-    </Content>
-    <None Include="T4include\TXLifeBuilder.t4include" />
-    <None Include="T4include\UserAuthRequestBuilder.t4include" />
-    <None Include="T4include\SaveOutput.t4include">
-      <LastGenOutput>SaveOutput1.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Tests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Tests.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

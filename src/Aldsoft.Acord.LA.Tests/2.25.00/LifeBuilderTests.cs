@@ -2,13 +2,12 @@ namespace Aldsoft.Acord.LA.Tests.V2_25_00
 {
     extern alias V2_25_00;
     using V2_25_00::Aldsoft.Acord.LA;
-    using NUnit.Framework;
+    using Xunit;
     using System;
 
-    [TestFixture]
-    class LifeBuilderTests
+    public class LifeBuilderTests
     {
-        [Test]
+        [Fact]
         public void V2_25_00_LifeBuilder_NoBaseCoverage()
         {
             // Arrange
@@ -16,18 +15,18 @@ namespace Aldsoft.Acord.LA.Tests.V2_25_00
 
             // Act/Assert
             var ex = Assert.Throws<InvalidOperationException>(() => builder.Build());
-            Assert.AreEqual("You cannot build the Life_Type entity without a base coverage.", ex.Message);
+            Assert.Equal("You cannot build the Life_Type entity without a base coverage.", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void V2_25_00_LifeBuilder_CannotConstructWithCoverage()
         {
             // Arrange/Act/Assert
             var ex = Assert.Throws<ArgumentException>(() => Life_Type.CreateBuilder(new Life_Type { Coverage = { new Coverage_Type() } }));
-            Assert.AreEqual("The Life_Type.Coverage collections should not be set. This builder will help handle the ACORD rules with setting this property.\r\nParameter name: baseEntity", ex.Message);
+            Assert.Equal("The Life_Type.Coverage collections should not be set. This builder will help handle the ACORD rules with setting this property.\r\nParameter name: baseEntity", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void V2_25_00_LifeBuilder_CannotBuildWithCoverage()
         {
             // Arrange
@@ -36,10 +35,10 @@ namespace Aldsoft.Acord.LA.Tests.V2_25_00
 
             // Act/Assert
             var ex = Assert.Throws<ArgumentException>(() => builder.Build(new Life_Type { Coverage = { new Coverage_Type() } }));
-            Assert.AreEqual("The Life_Type.Coverage collections should not be set. This builder will help handle the ACORD rules with setting this property.\r\nParameter name: baseEntity", ex.Message);
+            Assert.Equal("The Life_Type.Coverage collections should not be set. This builder will help handle the ACORD rules with setting this property.\r\nParameter name: baseEntity", ex.Message);
         }
 
-        [Test]
+        [Fact]
         public void V2_25_00_LifeBuilder_ConstructWithLife()
         {
             // Arrange
@@ -52,10 +51,10 @@ namespace Aldsoft.Acord.LA.Tests.V2_25_00
             life.Serialize(out xmlString);
 
             // Assert
-            Assert.IsTrue(xmlString.Contains("id=\"Life1\""));
+            Assert.Contains("id=\"Life1\"", xmlString);
         }
 
-        [Test]
+        [Fact]
         public void V2_25_00_LifeBuilder_BuildWithLife()
         {
             // Arrange
@@ -69,11 +68,11 @@ namespace Aldsoft.Acord.LA.Tests.V2_25_00
             life.Serialize(out xmlString);
 
             // Assert
-            Assert.IsTrue(xmlString.Contains("id=\"Life2\""));
+            Assert.Contains("id=\"Life2\"", xmlString);
             var indexOfBaseCoverage = xmlString.IndexOf("BaseCoverage2");
             var indexOfCoverage = xmlString.IndexOf("Coverage2");
-            Assert.IsTrue(indexOfBaseCoverage < indexOfCoverage);
-            Assert.IsTrue(xmlString.Contains("id=\"Life2\""));
+            Assert.True(indexOfBaseCoverage < indexOfCoverage);
+            Assert.Contains("id=\"Life2\"", xmlString);
         }
     }
 }

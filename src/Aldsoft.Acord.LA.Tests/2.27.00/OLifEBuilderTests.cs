@@ -2,13 +2,13 @@ namespace Aldsoft.Acord.LA.Tests.V2_27_00
 {
     extern alias V2_27_00;
     using V2_27_00::Aldsoft.Acord.LA;
-    using NUnit.Framework;
+    using Xunit;
     using System;
 
-    [TestFixture]
-    class OLifEBuilderTests
+    
+    public class OLifEBuilderTests
     {
-        [Test]
+        [Fact]
         public void V2_27_00_Relationship_Test1()
         {
             var builder = TXLife_Type.CreateBuilder()
@@ -166,8 +166,8 @@ namespace Aldsoft.Acord.LA.Tests.V2_27_00
             txLife.Serialize(out xmlString);
 
             // Assert
-            Assert.IsFalse(xmlString.Contains("<HoldingKey"));
-            Assert.IsTrue(xmlString.Contains("id=\"Relation9\""));
+            Assert.DoesNotContain("<HoldingKey", xmlString);
+            Assert.Contains("id=\"Relation9\"", xmlString);
         }
     }
 }
