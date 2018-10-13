@@ -3,6 +3,21 @@
   <PropertyGroup>
     <TargetFramework>net40</TargetFramework>
     <RootNamespace>Aldsoft.Acord.LA</RootNamespace>
+    <UpdateVersionProperties>true</UpdateVersionProperties>
+    <Version>0.0.0</Version>
+    <Authors>maldworth</Authors>
+    <Owners>maldworth</Owners>
+    <PackageLicenseUrl>https://github.com/maldworth/aldsoft.acord/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/maldworth/aldsoft.acord</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageTags>acord aldsoft</PackageTags>
+    <Description>Aldsoft.ACORD is a library that helps create ACORD object which can be serialized or deserialized.</Description>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="GitVersionTask" Version="4.0.0-beta*">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>

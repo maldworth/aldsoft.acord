@@ -1,34 +1,30 @@
-version: $(SEMVER).{build}
-pull_requests:
-  do_not_increment_build_number: true
-skip_tags: true
-configuration: Release
-environment:
-  SEMVER: 0.2.1
-install:
-- cmd: >-
-    npm install gulp -g
-
-    npm install
-nuget:
-  account_feed: true
-  project_feed: true
-  disable_publish_on_pr: true
-before_build:
-- cmd: >-
-    gulp assemblyInfo
-
-    gulp nuget-restore
-build:
-  verbosity: minimal
-after_build:
-- cmd: gulp package
-test:
-  assemblies: '**/bin/**/*Tests.dll'
 artifacts:
-- path: ./build_artifacts/*
-deploy:
-- provider: Environment
-  name: nuget
-  on:
-    appveyor_repo_tag: true
+  path: 'artifacts\**'
+
+configuration: Release
+
+image: Visual Studio 2017
+
+build_script:
+  - cmd: powershell -NoProfile -ExecutionPolicy unrestricted -Command .\build.ps1
+
+# Cake performs the tests
+test: off
+
+skip_tags: false
+
+# We can override common configuration from above
+for:
+
+-
+  branches:
+    only:
+      - master
+
+-
+  branches:
+    except:
+      - master
+      - develop
+
+  skip_tags: true

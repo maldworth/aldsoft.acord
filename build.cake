@@ -2,6 +2,8 @@
 // TOOLS
 //////////////////////////////////////////////////////////////////////
 
+#tool "nuget:?package=xunit.runner.console&version=2.4.0"
+
 #addin "nuget:?package=Cake.Powershell&version=0.4.6"
 
 //////////////////////////////////////////////////////////////////////
@@ -16,14 +18,14 @@ var target = Argument("target", "Default");
 
 // Build Configuration
 var configuration = EnvironmentVariable("CONFIGURATION") ?? "Release";
-var isAppVeyorBuild = EnvironmentVariable("APPVEYOR") == "True";
-var isPullRequest = EnvironmentVariable("APPVEYOR_PULL_REQUEST_NUMBER") != null;
+var isAppVeyorBuild = BuildSystem.AppVeyor.IsRunningOnAppVeyor;
+var isPullRequest = BuildSystem.AppVeyor.Environment.PullRequest.IsPullRequest;
 
 // Version
 var gitVersion = GitVersion();
 
 // File/Directory paths
-var artifactDirectory = MakeAbsolute(Directory("./artifacts")).FullPath;
+var artifactDirectory = MakeAbsolute(Directory("./artifacts")).FullPath; // Appveyor needs absolute paths
 var solutionFile = "./src/Aldsoft.Acord.sln";
 
 // Define global marcos.
@@ -55,6 +57,12 @@ Task("Restore-NuGet-Packages")
 {
     NuGetRestore(solutionFile, new NuGetRestoreSettings());
 });
+
+Task("Try")
+  .Does(() =>
+  {
+    Information(configuration);
+  });
 
 Task("Generate-CsCode")
     .Description("Generates the C# Objects from XSD Schemas")
@@ -91,17 +99,11 @@ Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    // var projects = GetFiles("./src/**/*.UnitTests.csproj");
-
-    // foreach(var project in projects)
-    // {
-    //     DotNetCoreTest(project.FullPath, new DotNetCoreTestSettings{
-    //         Configuration = configuration,
-    //         Logger = $"trx;LogFileName=TestResults.xml",
-    //         NoBuild = true,
-    //         NoRestore = true
-    //     });
-    // }
+  XUnit2($"./src/**/bin/{configuration}/**/*.Tests.dll",
+        new XUnit2Settings {
+            OutputDirectory = artifactDirectory,
+            XmlReport = true
+        });
 });
 
 Task("Create-NuGet-Packages")
@@ -123,6 +125,7 @@ Task("Create-NuGet-Packages")
 //////////////////////////////////////////////////////////////////////
 
 Task("Default")
+    .IsDependentOn("Clean")
     .IsDependentOn("Restore-NuGet-Packages")
     .IsDependentOn("Build")
     .IsDependentOn("Test")
