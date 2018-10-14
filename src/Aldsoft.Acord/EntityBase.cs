@@ -199,8 +199,6 @@
         /// <summary>
         /// Perform a deep copy of the object.
         /// </summary>
-        /// <typeparam name="T">The type of object being copied.</typeparam>
-        /// <param name="source">The object instance to copy.</param>
         /// <returns>The copied object.</returns>
         public T Clone()
         {

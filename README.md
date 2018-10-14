@@ -59,17 +59,16 @@ var txLifeObjectFromFile = TXLife_Type.LoadFromFile("c:\\path\\to\\file.xml");
 ## Building from Source
 
  1. Clone the source down to your machine.
- 1. Build in visual Studio 2015
+ 1. Build in visual Studio 2017
 
-## Building from Source (with gulp)
+## Building from Source (with Cake Build)
 
  1. Clone the source down to your machine.
- 1. Make sure you have gulp installed with npm `npm install gulp -g`
- 1. Then in the project dir enter `npm install`, and then `gulp build`
+ 1. Run `.\build.ps1`
+ 1. Done!
 
 ## Contributing
 
- 1. Make sure you have Visual Studio extension EditorConfig installed
  1. Improve/Fix!
  1. Make a pull request.
 
