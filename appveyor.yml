@@ -20,11 +20,10 @@ for:
   branches:
     only:
       - master
-
+      
 -
   branches:
     except:
       - master
-      - develop
 
   skip_tags: true
