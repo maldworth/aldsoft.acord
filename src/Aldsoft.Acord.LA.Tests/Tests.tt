@@ -14,18 +14,18 @@
 		var version = dir.Name.Replace("Aldsoft.Acord.LA.","");
 
 		GenerateLifeBuilder(version);
-		SaveOutput(version + "\\LifeBuilderTests.cs");
+		SaveOutput(version, "LifeBuilderTests.cs");
 
 		GenerateOLifEBuilder(version);
-		SaveOutput(version + "\\OLifEBuilderTests.cs");
+		SaveOutput(version, "OLifEBuilderTests.cs");
 
 		GeneratePartyBuilder(version);
-		SaveOutput(version + "\\PartyBuilderTests.cs");
+		SaveOutput(version, "PartyBuilderTests.cs");
 
 		GenerateTXLifeBuilder(version);
-		SaveOutput(version + "\\TXLifeBuilderTests.cs");
+		SaveOutput(version, "TXLifeBuilderTests.cs");
 
 		GenerateUserAuthRequestBuilder(version);
-		SaveOutput(version + "\\UserAuthRequestBuilderTests.cs");
+		SaveOutput(version, "UserAuthRequestBuilderTests.cs");
 	}
 #>

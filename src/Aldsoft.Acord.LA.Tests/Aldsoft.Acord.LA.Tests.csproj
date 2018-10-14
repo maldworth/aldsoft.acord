@@ -87,6 +87,17 @@
     </ProjectReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.38.00\Aldsoft.Acord.LA.2.38.00.csproj">
+      <Aliases>V2_38_00</Aliases>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.40.00\Aldsoft.Acord.LA.2.40.00.csproj">
+      <Aliases>V2_40_00</Aliases>
+    </ProjectReference>
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="Tests.tt">

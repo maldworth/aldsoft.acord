@@ -1,10 +1,15 @@
 ﻿<#@ template language="C#" hostspecific="true" #>
 <#@ import namespace="System.IO" #>
 <#+
-  void SaveOutput(string outputFileName)
+  void SaveOutput(string version, string outputFileName)
   {
       string templateDirectory = Path.GetDirectoryName(Host.TemplateFile);
-      string outputFilePath = Path.Combine(templateDirectory, outputFileName);
+      string outputFileDirectory = Path.Combine(templateDirectory, version);
+      if(!Directory.Exists(outputFileDirectory))
+      {
+          Directory.CreateDirectory(outputFileDirectory);
+      }
+      string outputFilePath = Path.Combine(outputFileDirectory, outputFileName);
       File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString()); 
 
       this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
