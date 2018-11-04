@@ -85,6 +85,12 @@
     <ProjectReference Include="..\Aldsoft.Acord.LA.2.35.00\Aldsoft.Acord.LA.2.35.00.csproj">
       <Aliases>V2_35_00</Aliases>
     </ProjectReference>
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.36.00\Aldsoft.Acord.LA.2.36.00.csproj">
+      <Aliases>V2_36_00</Aliases>
+    </ProjectReference>
+    <ProjectReference Include="..\Aldsoft.Acord.LA.2.37.00\Aldsoft.Acord.LA.2.37.00.csproj">
+      <Aliases>V2_37_00</Aliases>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>
