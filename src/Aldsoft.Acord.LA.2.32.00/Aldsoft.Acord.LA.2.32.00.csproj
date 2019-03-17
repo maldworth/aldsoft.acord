@@ -1,18 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net40</TargetFramework>
+    <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
     <RootNamespace>Aldsoft.Acord.LA</RootNamespace>
     <UpdateVersionProperties>true</UpdateVersionProperties>
     <Version>0.0.0</Version>
     <Authors>maldworth</Authors>
     <Owners>maldworth</Owners>
-    <PackageLicenseUrl>https://github.com/maldworth/aldsoft.acord/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/maldworth/aldsoft.acord</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>acord aldsoft</PackageTags>
-    <RepositoryUrl>https://github.com/maldworth/aldsoft.acord.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
     <Description>Aldsoft.ACORD is a library that helps create ACORD object which can be serialized or deserialized.</Description>
     <AssemblyOriginatorKeyFile>..\..\aldsoft.acord.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
@@ -22,12 +19,20 @@
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
+    
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>portable</DebugType>
+
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- SourceLink Config, needs nuget package in each csproj Microsoft.SourceLink.GitHub in order to work -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="GitVersionTask" Version="4.0.0-beta*">
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-*" PrivateAssets="All"/>
   </ItemGroup>
 
   <Import Project="..\Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems" Label="Shared" />

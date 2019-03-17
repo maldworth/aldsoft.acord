@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #tool "nuget:?package=xunit.runner.console&version=2.4.0"
+#tool "nuget:?package=GitVersion.CommandLine&version=4.0.0"
 
 #addin "nuget:?package=Cake.Powershell&version=0.4.6"
 
@@ -92,6 +93,10 @@ Task("Build")
             .WithTarget("Build")
             .SetConfiguration(configuration)
             .UseToolVersion(MSBuildToolVersion.VS2017)
+			.WithProperty("Version", gitVersion.SemVer)
+            .WithProperty("PackageVersion", gitVersion.SemVer)
+            .WithProperty("FileVersion", gitVersion.AssemblySemFileVer)
+            .WithProperty("InformationalVersion", gitVersion.InformationalVersion)
             );
 });
 
@@ -115,6 +120,10 @@ Task("Create-NuGet-Packages")
         .WithTarget("Pack")
         .SetConfiguration(configuration)
         .UseToolVersion(MSBuildToolVersion.VS2017)
+		.WithProperty("Version", gitVersion.SemVer)
+        .WithProperty("PackageVersion", gitVersion.SemVer)
+        .WithProperty("FileVersion", gitVersion.AssemblySemFileVer)
+        .WithProperty("InformationalVersion", gitVersion.InformationalVersion)
         .WithProperty("PackageOutputPath",artifactDirectory);
 
     MSBuild(solutionFile, settings);
