@@ -207,14 +207,8 @@
                 throw new ArgumentException("The type must be serializable.", "source");
             }
 
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new MemoryStream();
-            using (stream)
-            {
-                formatter.Serialize(stream, this);
-                stream.Seek(0, SeekOrigin.Begin);
-                return (T)formatter.Deserialize(stream);
-            }
+            Serialize(out string xml);
+            return Deserialize(xml);
         }
     }
 }
