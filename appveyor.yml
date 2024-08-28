@@ -3,7 +3,7 @@ artifacts:
 
 configuration: Release
 
-image: Visual Studio 2017
+image: Visual Studio 2022
 
 build_script:
   - cmd: powershell -NoProfile -ExecutionPolicy unrestricted -Command .\build.ps1
@@ -20,7 +20,7 @@ for:
   branches:
     only:
       - master
-      
+
 -
   branches:
     except:

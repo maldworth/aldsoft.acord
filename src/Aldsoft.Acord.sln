@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "la", "la", "{1AFF4004-3266-4742-A39E-EA5FBA1BE241}"
 EndProject
@@ -86,35 +86,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aldsoft.Acord.LA.2.37.00", "Aldsoft.Acord.LA.2.37.00\Aldsoft.Acord.LA.2.37.00.csproj", "{4F856AEA-8BCD-49FE-9E82-6E20A45D83A0}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{0ffc28ce-f851-4e1f-ae46-0ad3675e6d36}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{0ffc28ce-f851-4e1f-ae46-0ad3675e6d36}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{13d0da8f-eddf-45f1-9f73-c9eb8c6cd962}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{13d0da8f-eddf-45f1-9f73-c9eb8c6cd962}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{1410e97c-b48b-421e-b9a6-d4b4e84e947e}*SharedItemsImports = 13
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{142def4e-9b82-411f-a5d6-88d3db2cde29}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{142def4e-9b82-411f-a5d6-88d3db2cde29}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{3621def5-4866-448f-b3f2-a4063252dcd5}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{3621def5-4866-448f-b3f2-a4063252dcd5}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{386443b3-f660-45cc-8898-c5a14d7c637d}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{3e2c2daf-8e9a-4ed3-9e87-3eba95d597c8}*SharedItemsImports = 13
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{4551f36b-4404-4a52-9890-ee900fa52433}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{4551f36b-4404-4a52-9890-ee900fa52433}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{5cf70991-57ed-4b7e-9734-9d76a90f0e2a}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{5cf70991-57ed-4b7e-9734-9d76a90f0e2a}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{619d756a-b5e8-41c1-9458-fce9cf92b5cd}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{619d756a-b5e8-41c1-9458-fce9cf92b5cd}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{6ec638b1-764f-4bc6-9ed7-831c6b971126}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{6ec638b1-764f-4bc6-9ed7-831c6b971126}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{77fef0b7-b8a3-4353-8b19-4706bb4f0388}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{77fef0b7-b8a3-4353-8b19-4706bb4f0388}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{8d7f856e-277f-47c7-8977-23bc0ea8486e}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{8d7f856e-277f-47c7-8977-23bc0ea8486e}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{a279977e-3555-4071-b8ee-0c4ec720fa5b}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{a279977e-3555-4071-b8ee-0c4ec720fa5b}*SharedItemsImports = 4
-		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{e32b021e-5f82-40f8-ad9b-60ea3e032150}*SharedItemsImports = 4
-		Aldsoft.Acord\Aldsoft.Acord.projitems*{e32b021e-5f82-40f8-ad9b-60ea3e032150}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -225,5 +196,42 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0434868F-F1F1-4C77-8006-FF5716CEA3F9}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{0ffc28ce-f851-4e1f-ae46-0ad3675e6d36}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{0ffc28ce-f851-4e1f-ae46-0ad3675e6d36}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{13d0da8f-eddf-45f1-9f73-c9eb8c6cd962}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{13d0da8f-eddf-45f1-9f73-c9eb8c6cd962}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{1410e97c-b48b-421e-b9a6-d4b4e84e947e}*SharedItemsImports = 13
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{142def4e-9b82-411f-a5d6-88d3db2cde29}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{142def4e-9b82-411f-a5d6-88d3db2cde29}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{3621def5-4866-448f-b3f2-a4063252dcd5}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{3621def5-4866-448f-b3f2-a4063252dcd5}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{386443b3-f660-45cc-8898-c5a14d7c637d}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{3a2caabd-85a2-4092-a373-740afef553e0}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{3a2caabd-85a2-4092-a373-740afef553e0}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{3e2c2daf-8e9a-4ed3-9e87-3eba95d597c8}*SharedItemsImports = 13
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{4551f36b-4404-4a52-9890-ee900fa52433}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{4551f36b-4404-4a52-9890-ee900fa52433}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{4f856aea-8bcd-49fe-9e82-6e20a45d83a0}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{4f856aea-8bcd-49fe-9e82-6e20a45d83a0}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{5cf70991-57ed-4b7e-9734-9d76a90f0e2a}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{5cf70991-57ed-4b7e-9734-9d76a90f0e2a}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{619d756a-b5e8-41c1-9458-fce9cf92b5cd}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{619d756a-b5e8-41c1-9458-fce9cf92b5cd}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{6735437c-5aa0-4767-8afd-6718229b9d84}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{6735437c-5aa0-4767-8afd-6718229b9d84}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{6ec638b1-764f-4bc6-9ed7-831c6b971126}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{6ec638b1-764f-4bc6-9ed7-831c6b971126}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{77fef0b7-b8a3-4353-8b19-4706bb4f0388}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{77fef0b7-b8a3-4353-8b19-4706bb4f0388}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{8d7f856e-277f-47c7-8977-23bc0ea8486e}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{8d7f856e-277f-47c7-8977-23bc0ea8486e}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{a279977e-3555-4071-b8ee-0c4ec720fa5b}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{a279977e-3555-4071-b8ee-0c4ec720fa5b}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{d25c8348-8312-4d1f-ba05-a4c30037d1d2}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{d25c8348-8312-4d1f-ba05-a4c30037d1d2}*SharedItemsImports = 5
+		Aldsoft.Acord.LA\Aldsoft.Acord.LA.projitems*{e32b021e-5f82-40f8-ad9b-60ea3e032150}*SharedItemsImports = 5
+		Aldsoft.Acord\Aldsoft.Acord.projitems*{e32b021e-5f82-40f8-ad9b-60ea3e032150}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
