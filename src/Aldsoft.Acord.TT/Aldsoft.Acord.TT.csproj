@@ -37,10 +37,10 @@
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-
+<!--
   <Import Condition="'$(Configuration)' == 'Debug'" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TextTemplating\Microsoft.TextTemplating.targets" />
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
       <TransformOnBuild>true</TransformOnBuild>
-  </PropertyGroup>
+  </PropertyGroup> -->
 
 </Project>
