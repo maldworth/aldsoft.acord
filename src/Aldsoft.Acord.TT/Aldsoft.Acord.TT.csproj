@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net40</TargetFramework>
     <IsPackable>False</IsPackable>
+    <TransformOnBuild>true</TransformOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,13 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Clarius.TransformOnBuild" Version="1.21.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="LA\LookupTypesPublic.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LookupTypesPublic.cs</LastGenOutput>
@@ -44,5 +38,7 @@
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
+
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v17.0\TextTemplating\Microsoft.TextTemplating.targets" />
 
 </Project>
